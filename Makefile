@@ -3,7 +3,8 @@ GIT_SUBMODULES = ext/Soja ext/Soda
 
 browser					 = google-chrome
 
-soda_serve	= ext/Soda/soda --base-dir html -p 8888 --db-file /home/jbellec/cas_test/test_base/dump.db --db-dir /home/jbellec/cas_test/test_base/data.db
+soda_serve	= ext/Soda/soda --base-dir html -p 8888
+# --db-file /home/jbellec/cas_test/test_base/dump.db --db-dir /home/jbellec/cas_test/test_base/data.db
 
 
 

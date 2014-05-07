@@ -46,9 +46,35 @@ new_standard_session = ->
     include_standard_session td
     td
 
+try_username = () ->
+    username = document.getElementById( 'username' ).value
+    password = document.getElementById( 'password' ).value
+
+    xhr_object = FileSystem._my_xml_http_request()
+    xhr_object.open 'GET', "get_user_id?u=#{encodeURI username}&p=#{encodeURI password}", true
+    xhr_object.onreadystatechange = ->
+        if @readyState == 4 and @status == 200
+            lst = @responseText.split " "
+            user_id = parseInt lst[ 0 ]
+            if user_id > 0
+                launch_ecosystem_mecanic user_id, decodeURIComponent lst[ 1 ].trim()
+            else
+                document.getElementById( 'pwscomment' ).innerHTML = "Wrong username/password"
+                
+            
+    xhr_object.send()
     
+ 
+keypresslogin = ( e ) ->
+    if e.which == 13
+        try_username()
+    else
+        document.getElementById( 'pwscomment' ).innerHTML = ""
+
 #main program
-launch_ecosystem_mecanic = ( main = document.body ) ->
+launch_ecosystem_mecanic = ( userid, home_dir, main = document.body ) ->
+    FileSystem._home_dir = home_dir
+    FileSystem._userid   = userid
     MAIN_DIV = main
     
     #ajout des applications de EcosystemMecanics
@@ -75,20 +101,19 @@ launch_ecosystem_mecanic = ( main = document.body ) ->
         
     bs = new BrowserState
     fs = new FileSystem
-    # FileSystem._disp = true
     
     bs.location.bind ->
+        clear_page()
+
         # file -> make a new session
         if bs.location.protocol.get() == 'file:'
             td = new_session()
             app = new TreeApp main, td
             
         else
-            
             hash = bs.location.hash.get()
             # something to reload ?
             if hash.length > 1
-                clear_page()
                 path = decodeURIComponent hash.slice 1
                 fs.load path, ( td, err ) ->
                     if err
@@ -102,13 +127,7 @@ launch_ecosystem_mecanic = ( main = document.body ) ->
                     
             # else, browse old session
             else
-                if !SC_MODEL_ID? or SC_MODEL_ID == -1
-                  d = "/home/monkey/sessions"
-                else
-                  d = "/home/projet_" + SC_MODEL_ID
-                fs.load_or_make_dir d, ( session_dir, err ) ->
-                    clear_page()
-                    
+                fs.load_or_make_dir home_dir, ( session_dir, err ) ->
                     div = new_dom_element
                         parentNode: main
 
@@ -133,7 +152,7 @@ launch_ecosystem_mecanic = ( main = document.body ) ->
                             td = new_session()
                             
                             session_dir.add_file name, td, model_type: "Session", icon: "session"
-                            window.location = "#" + encodeURI( "#{d}/#{name}" )
+                            window.location = "#" + encodeURI( "#{home_dir}/#{name}" )
                     
                     #new_dom_element
                     #    nodeName: "button"
@@ -146,7 +165,7 @@ launch_ecosystem_mecanic = ( main = document.body ) ->
                     #        td = new_standard_session()
                     #        
                     #        session_dir.add_file name, td, model_type: "Session", icon: "session"
-                    #        window.location = "#" + encodeURI( "#{d}/#{name}" )
+                    #        window.location = "#" + encodeURI( "#{home_dir}/#{name}" )
                     
                     item_cp = new ModelEditorItem_Directory
                         el             : div
@@ -161,4 +180,4 @@ launch_ecosystem_mecanic = ( main = document.body ) ->
                     # RELOAD
                     ModelEditorItem_Directory.add_action "Session", ( file, path, browser ) ->
                         clear_page()
-                        window.location = "#" + encodeURI( "#{d}/#{file.name.get()}" )
+                        window.location = "#" + encodeURI( "#{home_dir}/#{file.name.get()}" )
