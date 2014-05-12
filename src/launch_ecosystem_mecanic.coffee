@@ -70,6 +70,7 @@ launch_ecosystem_mecanic = ( main = document.body ) ->
     APPS.push new TreeAppApplication_Annotation
     APPS.push new TreeAppApplication_Scilab
     APPS.push new TreeAppApplication_Acquisition
+    APPS.push new TreeAppApplication_Grid
     APPS.push new TreeAppApplication_Test
         
         
