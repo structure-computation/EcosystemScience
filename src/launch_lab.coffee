@@ -46,33 +46,32 @@ new_standard_session = ->
     include_standard_session td
     td
 
-try_username = () ->
-    username = document.getElementById( 'username' ).value
-    password = document.getElementById( 'password' ).value
-
-    xhr_object = FileSystem._my_xml_http_request()
-    xhr_object.open 'GET', "get_user_id?u=#{encodeURI username}&p=#{encodeURI password}", true
-    xhr_object.onreadystatechange = ->
-        if @readyState == 4 and @status == 200
-            lst = @responseText.split " "
-            user_id = parseInt lst[ 0 ]
-            if user_id > 0
-                launch_ecosystem_mecanic user_id, decodeURIComponent lst[ 1 ].trim()
-            else
-                document.getElementById( 'pwscomment' ).innerHTML = "Wrong username/password"
-                
-            
-    xhr_object.send()
     
- 
-keypresslogin = ( e ) ->
-    if e.which == 13
-        try_username()
-    else
-        document.getElementById( 'pwscomment' ).innerHTML = ""
+load_if_cookie_lab = () ->
+    if $.cookie("username") and $.cookie("password")
+        username = $.cookie("username")
+        password = $.cookie("password")
+        
+        xhr_object = FileSystem._my_xml_http_request()
+        xhr_object.open 'GET', "get_user_id?u=#{encodeURI username}&p=#{encodeURI password}", true
+        xhr_object.onreadystatechange = ->
+            if @readyState == 4 and @status == 200
+                lst = @responseText.split " "
+                user_id = parseInt lst[ 0 ]
+                if user_id > 0
+                    launch_lab user_id, decodeURIComponent lst[ 1 ].trim()
+                else
+                     window.location = "login.html"     
+                    
+                
+        xhr_object.send()
+          
+    else   
+        window.location = "login.html"       
+    
 
 #main program
-launch_ecosystem_mecanic = ( userid, home_dir, main = document.body ) ->
+launch_lab = ( userid, home_dir, main = document.body ) ->
     FileSystem._home_dir = home_dir
     FileSystem._userid   = userid
     MAIN_DIV = main
