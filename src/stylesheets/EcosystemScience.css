@@ -45,3 +45,23 @@ body {
     //border : 1px solid grey;
     //float : left;
 }
+
+.logo {
+    background : transparent url( 'img/logo_issim_test.png' ) left center no-repeat ;
+    margin-left: 5px;
+    height : 30px;
+    width: 200px ; /* largeur obligatoire pour être centré */ 
+    float : left;
+}
+
+.logout_div{
+    background : transparent url( 'img/logout.png' ) center center no-repeat ;
+    margin-left: 20px;
+    margin-right: 5px;
+    height : 30px;
+    width: 30px ; /* largeur obligatoire pour être centré */ 
+    float : right;
+    cursor : pointer
+}
+
+

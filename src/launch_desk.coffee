@@ -1,12 +1,13 @@
 #clear page
 APPS = new Lst
-
+USER_EMAIL = ""
 
     
 load_if_cookie_desk = () ->
     if $.cookie("email") and $.cookie("password")
         email = $.cookie("email")
         password = $.cookie("password")
+        USER_EMAIL = email
         
         xhr_object = FileSystem._my_xml_http_request()
         xhr_object.open 'GET', "get_user_id?u=#{encodeURI email}&p=#{encodeURI password}", true
@@ -51,6 +52,10 @@ launch_desk = ( userid, home_dir, main = document.body ) ->
     APPS.push new TreeAppApplication_Grid
     APPS.push new TreeAppApplication_Test
     
+    #login bar
+    login_bar = new LoginBar main, USER_EMAIL
+    
+    #desk
     FileSystem._home_dir = home_dir
     FileSystem._userid   = userid
     bs = new BrowserState

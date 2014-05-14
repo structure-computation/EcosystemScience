@@ -1,6 +1,6 @@
 #clear page
 MAIN_DIV = document.body
-
+USER_EMAIL = ""
 APPS = new Lst
 
 clear_page = ->
@@ -51,6 +51,7 @@ load_if_cookie_lab = () ->
     if $.cookie("email") and $.cookie("password")
         email = $.cookie("email")
         password = $.cookie("password")
+        USER_EMAIL = email
         
         xhr_object = FileSystem._my_xml_http_request()
         xhr_object.open 'GET', "get_user_id?u=#{encodeURI email}&p=#{encodeURI password}", true
@@ -98,13 +99,18 @@ launch_lab = ( userid, home_dir, main = document.body ) ->
     APPS.push new TreeAppApplication_Grid
     APPS.push new TreeAppApplication_Test
         
-        
+    
+    #lab
     bs = new BrowserState
     fs = new FileSystem
     
     bs.location.bind ->
         clear_page()
 
+        
+        #login bar
+        login_bar = new LoginBar main, USER_EMAIL
+        
         # file -> make a new session
         if bs.location.protocol.get() == 'file:'
             td = new_session()

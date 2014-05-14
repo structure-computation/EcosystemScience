@@ -151,7 +151,7 @@ create_login_div = ( container_bakground ) ->
             fontSize   : "15px"
             color      : "#4dbce9"
             cursor     : "pointer"
-            border     : "1px solid grey"
+#             border     : "1px solid grey"
         onmousedown: ( evt ) =>
             create_new_account_div(container_bakground)
             
@@ -167,7 +167,7 @@ create_login_div = ( container_bakground ) ->
             fontSize   : "15px"
             color      : "#4dbce9"
             cursor     : "pointer"
-            border     : "1px solid grey"
+#             border     : "1px solid grey"
         onmousedown: ( evt ) =>
             create_lost_password_div(container_bakground)
             
@@ -521,24 +521,24 @@ launch_login = ( userid, home_dir, main = document.body ) ->
    
 
 load_if_cookie_login = () ->
-        #     if $.cookie("email") and $.cookie("password")
-        #         email = $.cookie("email")
-        #         password = $.cookie("password")
-        #         
-        #         xhr_object = FileSystem._my_xml_http_request()
-        #         xhr_object.open 'GET', "get_user_id?u=#{encodeURI email}&p=#{encodeURI password}", true
-        #         xhr_object.onreadystatechange = ->
-        #             if @readyState == 4 and @status == 200
-        #                 lst = @responseText.split " "
-        #                 user_id = parseInt lst[ 0 ]
-        #                 if user_id > 0
-        #                     window.location = "desk.html" 
-        #                 else
-        #                     document.getElementById( 'pwscomment' ).innerHTML = "Wrong email/password"
-        #                     
-        #                 
-        #         xhr_object.send()
-        #     else
+    if $.cookie("email") and $.cookie("password")
+        email = $.cookie("email")
+        password = $.cookie("password")
+        
+        xhr_object = FileSystem._my_xml_http_request()
+        xhr_object.open 'GET', "get_user_id?u=#{encodeURI email}&p=#{encodeURI password}", true
+        xhr_object.onreadystatechange = ->
+            if @readyState == 4 and @status == 200
+                lst = @responseText.split " "
+                user_id = parseInt lst[ 0 ]
+                if user_id > 0
+                    window.location = "desk.html" 
+                else
+                    document.getElementById( 'pwscomment' ).innerHTML = "Wrong email/password"
+                    
+                
+        xhr_object.send()
+    else
         launch_login()
     
     
