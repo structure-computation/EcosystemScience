@@ -36,3 +36,12 @@ body {
     overflow-x: hidden;
 }
 
+.LoginBackground {
+    background : transparent url( 'img/login.png' ) center center no-repeat ;
+    margin-left: auto;
+    margin-right: auto;
+    height : 700px;
+    width: 600px ; /* largeur obligatoire pour être centré */ 
+    //border : 1px solid grey;
+    //float : left;
+}

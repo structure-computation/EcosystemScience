@@ -4,12 +4,12 @@ APPS = new Lst
 
     
 load_if_cookie_desk = () ->
-    if $.cookie("username") and $.cookie("password")
-        username = $.cookie("username")
+    if $.cookie("email") and $.cookie("password")
+        email = $.cookie("email")
         password = $.cookie("password")
         
         xhr_object = FileSystem._my_xml_http_request()
-        xhr_object.open 'GET', "get_user_id?u=#{encodeURI username}&p=#{encodeURI password}", true
+        xhr_object.open 'GET', "get_user_id?u=#{encodeURI email}&p=#{encodeURI password}", true
         xhr_object.onreadystatechange = ->
             if @readyState == 4 and @status == 200
                 lst = @responseText.split " "
