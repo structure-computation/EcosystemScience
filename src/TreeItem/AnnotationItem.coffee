@@ -9,7 +9,7 @@ class AnnotationItem extends TreeItem
             
         @add_attr
             title        : @_name
-            posted_by    : SC_USER_EMAIL
+            posted_by    : USER_EMAIL
             _point       : new PointMesher [ 0, 0, 0 ], 2, 6
             note         : "test"
             link         : "http://www.structure-computation.com"

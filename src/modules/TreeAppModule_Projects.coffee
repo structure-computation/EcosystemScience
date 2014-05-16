@@ -41,10 +41,7 @@ class TreeAppModule_Projects extends TreeAppModule
                     fs = new FileSystem
                     FileSystem._disp = false
                  
-                if !SC_MODEL_ID? or  SC_MODEL_ID == -1
-                  dir = "/home/monkey/test_browser"
-                else
-                  dir = "/home/projet_" + SC_MODEL_ID
+                dir = FileSystem._home_dir
                   
                 #alert dir
                 fs.load_or_make_dir dir, ( session_dir, err ) =>     
