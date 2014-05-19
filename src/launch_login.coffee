@@ -23,7 +23,9 @@ load_if_cookie_login = () ->
                 if user_id > 0
                     window.location = "desk.html" 
                 else
-                    document.getElementById( 'pwscomment' ).innerHTML = "Wrong email/password"
+                    $.removeCookie("password", { path: '/' })
+                    launch_login()
+                    document.getElementById( 'pwscomment' ).innerHTML = "Wrong email/password" if document.getElementById( 'pwscomment' )
                     
                 
         xhr_object.send()
