@@ -16,7 +16,7 @@ all: Soja_javascripts ext/Soda
 
 # launch with server
 mechanic: Soja_javascripts ext/Soda
-	${soda_serve} -l --start-page /EcosystemMechanic.html --title-page __EcosystemMechanic__
+	${soda_serve} -l --start-page /login.html --title-page __EcosystemMechanic__
 
 # launch with server
 biotech: Soja_javascripts ext/Soda
