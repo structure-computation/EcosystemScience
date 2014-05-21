@@ -10,6 +10,8 @@ launch_login = ( userid, home_dir, main = document.body ) ->
     login_view = new LoginView main
 
 load_if_cookie_login = () ->
+    console.log $.cookie("email")
+    console.log $.cookie("password")
     if $.cookie("email") and $.cookie("password")
         email = $.cookie("email")
         password = $.cookie("password")
@@ -23,7 +25,7 @@ load_if_cookie_login = () ->
                 if user_id > 0
                     window.location = "desk.html" 
                 else
-                    $.removeCookie("password", { path: '/' })
+                    $.removeCookie( "password", { path: '/' })
                     launch_login()
                     document.getElementById( 'pwscomment' ).innerHTML = "Wrong email/password" if document.getElementById( 'pwscomment' )
                     
