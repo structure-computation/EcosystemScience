@@ -10,8 +10,6 @@ launch_login = ( userid, home_dir, main = document.body ) ->
     login_view = new LoginView main
 
 load_if_cookie_login = () ->
-    console.log $.cookie("email")
-    console.log $.cookie("password")
     if $.cookie("email") and $.cookie("password")
         email = $.cookie("email")
         password = $.cookie("password")
