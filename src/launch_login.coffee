@@ -34,9 +34,9 @@ load_if_cookie_login = () ->
     
     else if bs.location.hash.get().length > 1 # signe # dans la requette
         hash = bs.location.hash.get()
-        confirmationToken = decodeURIComponent hash.slice 1
+        confirmationToken = hash.slice 1
         xhr_object = FileSystem._my_xml_http_request()
-        xhr_object.open 'GET', "get_confirm_new_account?c=#{encodeURI confirmationToken}", true
+        xhr_object.open 'GET', "get_confirm_new_account?c=#{confirmationToken}", true
         xhr_object.onreadystatechange = ->
             if @readyState == 4 and @status == 200
                 lst = @responseText.split " "
