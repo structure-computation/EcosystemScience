@@ -60,9 +60,25 @@ launch_desk = ( userid, home_dir, main = document.body ) ->
     FileSystem._userid   = userid
     bs = new BrowserState
     fs = new FileSystem
-    dd = new DeskData    
+    config_dir = FileSystem._home_dir + "/__config__" 
+    
+    fs.load_or_make_dir config_dir, ( current_dir, err ) ->
+        config_file = current_dir.detect ( x ) -> x.name.get() == ".config"
+        if not config_file?
+            config  = new DeskConfig
+            current_dir.add_file ".config", config, model_type: "Config"
+            create_desk_view config, main
+
+        else
+            config_file.load ( config, err ) =>
+                create_desk_view config, main
+  
+    
+create_desk_view = ( config, main = document.body ) ->
+    dd = new DeskData  config  
     dd.new_session()
-    app = new DeskApp main, dd    
+    app = new DeskApp main, dd  
+    
     
 
 
