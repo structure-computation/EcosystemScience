@@ -1,7 +1,7 @@
 #clear page
 USER_EMAIL = ""
 
-APPS = []
+APPS = new Lst
 
 load_if_cookie_organisation = () ->
     if $.cookie("email") and $.cookie("password")
