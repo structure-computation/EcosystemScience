@@ -73,6 +73,10 @@ create_organisation_view = ( config, main = document.body ) ->
     APPS.push new TreeAppApplication_Grid
     APPS.push new TreeAppApplication_Test
     
+    APPS.push new TreeAppApplication_IpolACE
+    APPS.push new TreeAppApplication_IpolLSD
+    APPS.push new TreeAppApplication_IpolSCA
+    APPS.push new TreeAppApplication_IpolTVD
     
     #login bar
     login_bar = new LoginBar main, config
