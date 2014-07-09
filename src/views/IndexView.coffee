@@ -133,25 +133,25 @@ class IndexView extends View
                     scrollTop:   $('#solution').offset().top - 80
                     1500
         
-        menu_product = new_dom_element
-            parentNode : menu
-            nodeName   : "div" 
-            className  : "indexMenuButton"
-            txt        : "Products"
-            onclick: ( evt ) ->
-                $(document.body).animate
-                    scrollTop:   $('#products').offset().top - 80
-                    1500
-            
-        menu_offer = new_dom_element
-            parentNode : menu
-            nodeName   : "div" 
-            className  : "indexMenuButton"
-            txt        : "Services"
-            onclick: ( evt ) ->
-                $(document.body).animate
-                    scrollTop:   $('#services').offset().top - 80
-                    1500
+#         menu_product = new_dom_element
+#             parentNode : menu
+#             nodeName   : "div" 
+#             className  : "indexMenuButton"
+#             txt        : "Products"
+#             onclick: ( evt ) ->
+#                 $(document.body).animate
+#                     scrollTop:   $('#products').offset().top - 80
+#                     1500
+#             
+#         menu_offer = new_dom_element
+#             parentNode : menu
+#             nodeName   : "div" 
+#             className  : "indexMenuButton"
+#             txt        : "Services"
+#             onclick: ( evt ) ->
+#                 $(document.body).animate
+#                     scrollTop:   $('#services').offset().top - 80
+#                     1500
             
         menu_contact = new_dom_element
             parentNode : menu
@@ -302,7 +302,7 @@ class IndexView extends View
             parentNode : goal
             nodeName   : "div" 
             txt        : "<b>is'sim</b> was founded on the basis of several observations: <ul type='circle'>
-                              <li>cost of simulation tools (software, hardware, maintenance) is too high</li>
+                              <li> cost of simulation tools (software, hardware, maintenance) is too high</li>
                               <li> simulation solutions are inaccessible to a large number of small companies</li>
                               <li> new HPC needs lead to a demand for new and more flexible usages</li>
                               <li> digital data generated are more complex and numerous</li>
@@ -318,7 +318,39 @@ class IndexView extends View
             style      :
                 textAlign  : "justify"
         
+
         #awards ---------------------------------------------------------
+        awards = @add_part "awards","#f6f6f6" ,"#262626"   
+        awards_title =  new_dom_element
+            parentNode : awards
+            nodeName   : "div" 
+            txt        : 'Awards' 
+            className  : "indexcenterpartTitle"
+        
+        cola1 = @add_col(2, awards)
+        new_dom_element
+            parentNode : cola1
+            nodeName   : "div" 
+            txt        : 'Innovative technologies <br> (French ministery of research, BPI France)' 
+        new_dom_element
+            parentNode : cola1
+            nodeName  : "img"
+            src       : "img/CCETI_oseo.png"
+            width     : "200"
+        
+        
+        cola2 = @add_col(2, awards)
+        new_dom_element
+            parentNode : cola2
+            nodeName   : "div" 
+            txt        : 'Innovative SME <br> (system@tic cluster)' 
+        new_dom_element
+            parentNode : cola2
+            nodeName  : "img"
+            src       : "img/logo_PME_innvante_systematic.png"
+            width     : "200"
+        
+        #partners ---------------------------------------------------------
         partners = @add_part "partners","#f6f6f6" ,"#262626"   
         partners_title =  new_dom_element
             parentNode : partners
@@ -357,40 +389,7 @@ class IndexView extends View
             parentNode : col3
             nodeName  : "img"
             src       : "img/logo_incuballiance.png"
-            width     : "200"
-
-        #awards ---------------------------------------------------------
-        awards = @add_part "awards","#f6f6f6" ,"#262626"   
-        awards_title =  new_dom_element
-            parentNode : awards
-            nodeName   : "div" 
-            txt        : 'Awards' 
-            className  : "indexcenterpartTitle"
-        
-        cola1 = @add_col(2, awards)
-        new_dom_element
-            parentNode : cola1
-            nodeName   : "div" 
-            txt        : 'Innovative technologies <br> (French ministery of research, BPI France)' 
-        new_dom_element
-            parentNode : cola1
-            nodeName  : "img"
-            src       : "img/CCETI_oseo.png"
-            width     : "200"
-        
-        
-        cola2 = @add_col(2, awards)
-        new_dom_element
-            parentNode : cola2
-            nodeName   : "div" 
-            txt        : 'Innovative SME <br> (system@tic cluster)' 
-        new_dom_element
-            parentNode : cola2
-            nodeName  : "img"
-            src       : "img/logo_PME_innvante_systematic.png"
-            width     : "200"
-        
-            
+            width     : "200"    
         
     
     #contact--------------------------------------------
@@ -562,13 +561,13 @@ class IndexView extends View
         @add_part_separator()
         @create_solution()
         
-        #Products----------------------------------------------------------
-        @add_part_separator()
-        @create_products()
-        
-        #Services----------------------------------------------------------
-        @add_part_separator()
-        @create_services()
+#         #Products----------------------------------------------------------
+#         @add_part_separator()
+#         @create_products()
+#         
+#         #Services----------------------------------------------------------
+#         @add_part_separator()
+#         @create_services()
         
         #contact----------------------------------------------------------
         @add_part_separator()
