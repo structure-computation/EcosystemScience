@@ -27,8 +27,7 @@ class IndexView extends View
         @container_bakground = new_dom_element
             parentNode : @page_container
             nodeName   : "div" 
-            className  : "indexBackground"
-            
+            className  : "indexBackground"    
         
         @create_index()
         
@@ -83,7 +82,7 @@ class IndexView extends View
             nodeName   : "div" 
             style :
                 width   : nb_sub + "%"
-                float   : "left"
+                cssFloat   : "left"
                 textAlign : "center"
                 margin: "0 0 20px 0"
                 
@@ -143,15 +142,15 @@ class IndexView extends View
 #                     scrollTop:   $('#products').offset().top - 80
 #                     1500
 #             
-#         menu_offer = new_dom_element
-#             parentNode : menu
-#             nodeName   : "div" 
-#             className  : "indexMenuButton"
-#             txt        : "Services"
-#             onclick: ( evt ) ->
-#                 $(document.body).animate
-#                     scrollTop:   $('#services').offset().top - 80
-#                     1500
+        menu_offer = new_dom_element
+            parentNode : menu
+            nodeName   : "div" 
+            className  : "indexMenuButton"
+            txt        : "Services"
+            onclick: ( evt ) ->
+                $(document.body).animate
+                    scrollTop:   $('#services').offset().top - 80
+                    1500
             
         menu_contact = new_dom_element
             parentNode : menu
@@ -185,13 +184,19 @@ class IndexView extends View
     #presentation-----------------------------------------------------------------------
     create_presentation: ->
         presentation = @add_part "presentation", "#f6f6f6", "#262626"   
+        presentation_title =  new_dom_element
+            parentNode : presentation
+            nodeName   : "div" 
+            txt        : "is'sim" 
+            className  : "indexcenterpartTitle"
+        
         presentation_video =  new_dom_element
             parentNode : presentation
             nodeName   : "div" 
             txt        : '<iframe width="853" height="480" src="//www.youtube.com/embed/K1MVV_nG8BI?rel=0" frameborder="0" allowfullscreen></iframe>'  
             style      :
                 margin     : "0px 0 0 123px"
-                float      : "left"
+                cssFloat      : "left"
         
         presentation_title =  new_dom_element
             parentNode : presentation
@@ -204,13 +209,51 @@ class IndexView extends View
                 #fontWeight : "bold"
                 fontSize   : "38px"
                 color      : "#262626"
-                float      : "left"
+                cssFloat      : "left"
         
          
-        #illustrations --------------------------------------
-        illustration = @add_part "illustration", "#262626" , "#f6f6f6"
+        #key idea ---------------------------------------        
+        key_idea = @add_part "key_idea", "#262626" , "#f6f6f6"
+
+        col1 = @add_col(3, key_idea)
+        new_dom_element
+            parentNode : col1
+            nodeName   : "div" 
+            txt        : 'CONNECT'  
+            className  : "presentationBigTitleCol"
+        new_dom_element
+            parentNode : col1
+            nodeName   : "div" 
+            txt        : 'Access & use all your data and applications everywhere through your web browser. This is simple !'  
+            className  : "presentationIndiTextCol"
         
-        biglogo = @add_col(1, illustration)
+
+        col2 = @add_col(3, key_idea)
+        new_dom_element
+            parentNode : col2
+            nodeName   : "div" 
+            txt        : 'COLLABORATE'  
+            className  : "presentationBigTitleCol"
+        new_dom_element
+            parentNode : col2
+            nodeName   : "div" 
+            txt        : 'Share and modify all your data (text, project, 3D...) in real time !'  
+            className  : "presentationIndiTextCol"   
+            
+            
+        col3 = @add_col(3, key_idea)
+        new_dom_element
+            parentNode : col3
+            nodeName   : "div" 
+            txt        : 'COMPUTE'  
+            className  : "presentationBigTitleCol"
+        new_dom_element
+            parentNode : col3
+            nodeName   : "div" 
+            txt        : 'Use remote powerful resources ond demand. Fit them to your needs !'  
+            className  : "presentationIndiTextCol"
+        
+        biglogo = @add_col(1, key_idea)
         new_dom_element
             parentNode : biglogo
             nodeName  : "img"
@@ -218,40 +261,7 @@ class IndexView extends View
             alt       : "logo"
             title     : "logo"
             style      :
-                margin: "0 0 20px 0"
-        
-        ill1 = @add_col(4, illustration)
-        new_dom_element
-            parentNode : ill1
-            nodeName  : "img"
-            src       : "img/Correli.png"
-            alt       : "Correli"
-            title     : "Correli"
-            
-        ill2 = @add_col(4, illustration)
-        new_dom_element
-            parentNode : ill2
-            nodeName  : "img"
-            src       : "img/Mesh.png"
-            alt       : "Mesh"
-            title     : "Mesh"
-            
-        ill3 = @add_col(4, illustration)
-        new_dom_element
-            parentNode : ill3
-            nodeName  : "img"
-            src       : "img/Scills.png"
-            alt       : "Scills"
-            title     : "Scills"
-            
-        ill4 = @add_col(4, illustration)
-        new_dom_element
-            parentNode : ill4
-            nodeName  : "img"
-            src       : "img/Plot.png"
-            alt       : "Plot"
-            title     : "Plot"
-            
+                margin: "0 0 20px 0"    
             
     #company -----------------------------------------------------------------------------        
     create_team: ->
@@ -261,7 +271,7 @@ class IndexView extends View
             nodeName   : "div" 
             txt        : 'Team' 
             className  : "indexcenterpartTitle"
-                
+        
         team1 = @add_col(2, team)
         new_dom_element
             parentNode : team1
@@ -275,8 +285,7 @@ class IndexView extends View
             txt        : 'Jeremie Bellec : <br> CEO, PhD in mechanical engineering'  
             style      :
                 width      : "100%"
-        
-        
+
         team2 = @add_col(2, team)
         new_dom_element
             parentNode : team2
@@ -288,6 +297,49 @@ class IndexView extends View
             parentNode : team2
             nodeName   : "div"
             txt        : 'Hugo Leclerc : <br> Scientific advisor, PhD, CNRS'  
+            style      :
+                width      : "100%"
+        
+        team3 = @add_col(3, team)
+        new_dom_element
+            parentNode : team3
+            nodeName  : "img"
+            src       : "img/team.png"
+            alt       : "Raphael Bellec"
+            title     : "Raphael Bellec"
+        new_dom_element
+            parentNode : team3
+            nodeName   : "div"
+            txt        : 'Raphael Bellec : <br> Associate, web entrepreneur'  
+            style      :
+                width      : "100%"
+        
+        
+        team4 = @add_col(3, team)
+        new_dom_element
+            parentNode : team4
+            nodeName  : "img"
+            src       : "img/team.png"
+            alt       : "David Violeau"
+            title     : "David Violeau"
+        new_dom_element
+            parentNode : team4
+            nodeName   : "div"
+            txt        : 'David Violeau : <br> Associate, PhD, professor'  
+            style      :
+                width      : "100%"
+                
+        team5 = @add_col(3, team)
+        new_dom_element
+            parentNode : team5
+            nodeName  : "img"
+            src       : "img/team.png"
+            alt       : "Alain Caignot"
+            title     : "Alain Caignot"
+        new_dom_element
+            parentNode : team5
+            nodeName   : "div"
+            txt        : 'Alain Caignot : <br> Associate, PhD, professor'  
             style      :
                 width      : "100%"
         
@@ -336,7 +388,7 @@ class IndexView extends View
             parentNode : cola1
             nodeName  : "img"
             src       : "img/CCETI_oseo.png"
-            width     : "200"
+            width     : "150"
         
         
         cola2 = @add_col(2, awards)
@@ -348,7 +400,7 @@ class IndexView extends View
             parentNode : cola2
             nodeName  : "img"
             src       : "img/logo_PME_innvante_systematic.png"
-            width     : "200"
+            width     : "250"
         
         #partners ---------------------------------------------------------
         partners = @add_part "partners","#f6f6f6" ,"#262626"   
@@ -371,6 +423,8 @@ class IndexView extends View
             nodeName  : "img"
             src       : "img/logo_BPI_France.png"
             width     : "200"
+            style      :
+                margin : "0px 0 30px 0"
             
         new_dom_element
             parentNode : col2
@@ -384,6 +438,8 @@ class IndexView extends View
             nodeName  : "img"
             src       : "img/logo_ens.png"
             width     : "200"
+            style      :
+                margin : "0px 0 30px 0"
         
         new_dom_element
             parentNode : col3
@@ -404,10 +460,11 @@ class IndexView extends View
         new_dom_element
             parentNode : contact
             nodeName   : "div"
-            txt        : "86 rue de Paris, 91400 Orcay, FRANCE"
+            txt        : "86 rue de Paris, 91400 Orsay, FRANCE"
             style      :
                 width      : "100%"
                 textAlign : "center"
+                margin : "20px 0 5px 0"
         new_dom_element
             parentNode : contact
             nodeName   : "a"
@@ -422,7 +479,7 @@ class IndexView extends View
             txt        : '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.484965886882!2d2.1946309000000097!3d48.696210899999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5d61facc30587%3A0xccaaa136fb1452e7!2s86+Rue+de+Paris!5e0!3m2!1sfr!2sfr!4v1404916614372" width="900" height="450" frameborder="0" style="border:0"></iframe>'
             style      :
                 width      : "100%"
-#                 margin     : "20px 0 20px 100px"
+                margin     : "20px 0 0 0"
 
     #Solution--------------------------------------------
     create_solution: ->
@@ -438,6 +495,11 @@ class IndexView extends View
         col1 = @add_col(3, presentation)
         new_dom_element
             parentNode : col1
+            nodeName   : "div" 
+            txt        : 'CONNECT'  
+            className  : "presentationBigTitleCol"
+        new_dom_element
+            parentNode : col1
             nodeName  : "img"
             src       : "img/solution_select.jpg"
             alt       : "Select"
@@ -445,51 +507,63 @@ class IndexView extends View
         new_dom_element
             parentNode : col1
             nodeName   : "div" 
-            txt        : 'ONLINE SCIENTIFIC  <br> APPLICATIONS LIBRARY !'  
+            txt        : 'ONLINE DESIGN  <br> APPLICATIONS LIBRARY !'  
             className  : "presentationTitleCol"
         new_dom_element
             parentNode : col1
             nodeName   : "div" 
-            txt        : 'Third party scientific applications <br>  All options available  <br>  Full web unified environment'  
+            txt        : 'Third party design applications <br>  All options available  <br>  Full web unified environment'  
             className  : "presentationTextCol"
         
-
-        col2 = @add_col(3, presentation)
-        new_dom_element
-            parentNode : col2
-            nodeName  : "img"
-            src       : "img/solution_simulate.jpg"
-            alt       : "Simulate"
-            title     : "Simulate"
+        
+        col2 = @add_col(3, presentation) 
         new_dom_element
             parentNode : col2
             nodeName   : "div" 
-            txt        : 'POWERFUL  <br> AND SIMPLE !'  
-            className  : "presentationTitleCol"
+            txt        : 'COLLABORATE'  
+            className  : "presentationBigTitleCol"
         new_dom_element
             parentNode : col2
-            nodeName   : "div" 
-            txt        : 'Use tremendous HPC resources <br> On demand Simulation <br> Fluid 3D visualisation with WebGL'  
-            className  : "presentationTextCol"   
-            
-            
-        col3 = @add_col(3, presentation)
-        new_dom_element
-            parentNode : col3
             nodeName  : "img"
             src       : "img/solution_share.jpg"
             alt       : "Share"
             title     : "Share"
         new_dom_element
+            parentNode : col2
+            nodeName   : "div" 
+            txt        : 'COLLABORATE <br> IN REAL TIME !'  
+            className  : "presentationTitleCol"
+        new_dom_element
+            parentNode : col2
+            nodeName   : "div" 
+            txt        : 'Collaborate on all your data in real time <br> Share immediately all your results <br> Full compatibility between applications'  
+            className  : "presentationTextCol"
+        
+        col3 = @add_col(3, presentation)
+        new_dom_element
             parentNode : col3
             nodeName   : "div" 
-            txt        : 'COLLABORATIVE  <br> IN REAL TIME !'  
+            txt        : 'COMPUTE'  
+            className  : "presentationBigTitleCol"
+        new_dom_element
+            parentNode : col3
+            nodeName  : "img"
+            src       : "img/solution_simulate.jpg"
+            alt       : "Simulate"
+            title     : "Simulate"
+        new_dom_element
+            parentNode : col3
+            nodeName   : "div" 
+            txt        : 'POWERFUL <br> AND SIMPLE !'  
             className  : "presentationTitleCol"
         new_dom_element
             parentNode : col3
             nodeName   : "div" 
-            txt        : 'Collaborate on your 3D model in real time <br> Share immediately all your results <br> Full compatibility between applications'  
-            className  : "presentationTextCol"
+            txt        : 'Use tremendous HPC resources <br> On demand Simulation <br> Fluid data visualisation with WebGL'  
+            className  : "presentationTextCol"   
+            
+            
+        
         
         #description ---------------------------------------   
         description = @add_part "description", "#262626", "#f6f6f6"  
@@ -497,7 +571,7 @@ class IndexView extends View
         new_dom_element
             parentNode : description
             nodeName   : "div" 
-            txt        : "<b>is'sim</b> is a real time collaborative solution for 3D simulations and engineering. This web-based operating system offers Platform as a Service to anyone needing to realise complex simulations. <b>is'sim</b> provide, in a unified environment, the best third party tools, standard scientific software as well as High Performance Computing software. All these tools are served by a unified interface and a unified data format. Associated with the power of cloud computing and centralization of computing means, software licenses and simulation data, <b>is'sim</b> is to become the first and most powerful scientific SaaS solution."  
+            txt        : "<b> is'sim </b> is a real time collaborative solution for design applications. This web-based operating system offers powerfull tools to any user needing to realise design simulations and to any editors needing SaaS version of their software. <b> is'sim </b> provide, in a unified environment, the best third party tools, standard software as well as High Performance Computing software. All these tools are served by a unified and dynamic web interface and a unified data format. Associated with the power of cloud computing and centralization of computing means, software licenses and data, <b>is'sim</b> is to become the first and most powerful collaborative SaaS solution."  
             style      :
                 textAlign  : "justify"
                 
@@ -510,6 +584,38 @@ class IndexView extends View
             title     : "logo"
             style      :
                 margin: "0 0 20px 0"
+                
+        ill1 = @add_col(4, description)
+        new_dom_element
+            parentNode : ill1
+            nodeName  : "img"
+            src       : "img/Correli.png"
+            alt       : "Correli"
+            title     : "Correli"
+            
+        ill2 = @add_col(4, description)
+        new_dom_element
+            parentNode : ill2
+            nodeName  : "img"
+            src       : "img/Mesh.png"
+            alt       : "Mesh"
+            title     : "Mesh"
+            
+        ill3 = @add_col(4, description)
+        new_dom_element
+            parentNode : ill3
+            nodeName  : "img"
+            src       : "img/Scills.png"
+            alt       : "Scills"
+            title     : "Scills"
+            
+        ill4 = @add_col(4, description)
+        new_dom_element
+            parentNode : ill4
+            nodeName  : "img"
+            src       : "img/Plot.png"
+            alt       : "Plot"
+            title     : "Plot"
     
     #Products--------------------------------------------
     create_products: ->
@@ -522,6 +628,60 @@ class IndexView extends View
             className  : "indexcenterpartTitle"
             
     #Services--------------------------------------------
+    add_service: (parent, short_service, recipient, description) ->
+        service_editor = new_dom_element
+            parentNode : parent
+            nodeName   : "div" 
+            style      :
+#                 border     : "1px solid #4dbce9"
+                cssFloat   : "left" 
+                margin     : "10px 0px 10px 0"
+        short = new_dom_element
+            parentNode : service_editor
+            nodeName   : "div"  
+            style      :
+                width      : "200px"
+                height     : "220px"
+                textAlign  : "center"
+                fontWeight : "bold"
+                fontSize   : "25px"
+                color      : "#f6f6f6"
+                margin     : "0px 30px 0px 0"
+                background : "#4dbce9"
+                cssFloat   : "left"
+                
+        new_dom_element
+            parentNode : short
+            nodeName   : "div"  
+            txt        : short_service
+            style      :  
+                width   : "200px"
+                margin     : "50px 0px 0px 0"
+#                 border     : "1px solid grey"
+                
+            
+        new_dom_element
+            parentNode : service_editor
+            nodeName   : "div" 
+            txt        : recipient
+            style      :
+                width      : "800px"
+                height     : "30px"
+                textAlign  : "left"
+                fontWeight : "bold"
+                fontSize   : "23px"
+                margin     : "0px 0px 0px 0"
+                cssFloat   : "left"             
+        new_dom_element
+            parentNode : service_editor
+            nodeName   : "div" 
+            txt        : description
+            style      :
+                width      : "850px"
+                textAlign  : "left"
+                margin     : "0px 0px 0px 0"
+                cssFloat   : "left"
+    
     create_services: ->
         services = @add_part "services", "#f6f6f6", "#262626"  
         services.style.textAlign = "center"
@@ -530,18 +690,74 @@ class IndexView extends View
             nodeName   : "div" 
             txt        : 'Services' 
             className  : "indexcenterpartTitle"
+        
+        @add_service( 
+            services
+            "SaaS <br> enabler & provider",
+            "FOR SOFTWARE EDITORS",
+            "<b> How to commercialize my software worldwide with a small sales force ? </b> <br>
+                SaaS distribution is the key way to increase your sales potential without massive investments. 
+                <b> is'sim </b> team assists you in this transition, first by providing an online demo of your software accessible from your website  
+                then gradually integrating all the functions into a full online version and building your new business model. <br>
+                Whether your software is simple or highly technical, our hybrid SaaS solution fits to your needs." )
+            
+        @add_service( 
+            services
+            "Recurring <br> business <br> model",
+            "FOR OPEN SOURCE SOFTWARE EDITORS",
+            "<b> How to secure my business with recurring income? </b> <br>
+                The direct answer is: by selling a quality service that simplifies the lives of your clients and that is recurrent...<br>
+                <b> is'sim </b> team invites you to make your software available in SaaS mode and thus offer a large number of your users 
+                the ability to simply use your aplications without installation or maintenance constraints, equipment purchase...
+                You give new collaborative abilities to your software and secure your business with recurring income." )
+        
+        @add_service( 
+            services
+            "Online Applicative journal",
+            "FOR RESEARCH LABORATORIES",
+            "<b> How to improve visibility of my research and sustain my algorithm development? </b> <br>
+                You can now use your algorithms as a communication medium of your research. With <b> is'sim </b> you associate 
+                with each of your articles an online demonstrator of the algorithm which implements the method described. 
+                You make your research reproducible, sustainable and give it a more practical aspect. Your works are understandable 
+                by a greater number of people who can bring you new research contracts." )
+        
+        @add_service( 
+            services
+            "Maturation <br> of research algorithms",
+            "FOR OFFICES OF TECHNOLOGY TRANSFERT",
+            "<b> How to accelerate the maturation of my research software? </b> <br>
+                We designed around <b> is'sim </b> a new organization covering the essential stages of maturation : <ul type='circle'>
+                <li>  <b> Legal maturation : </b> we propose a standard model for the sharing of IP on a global solution.  </li>
+                <li>  <b> Technical maturation : </b> the association with <b> is'sim </b> makes your software compatible with all other inegrated softwares and gives it standardized ergonomic GUI already known by users. </li>
+                <li>  <b> Commercial maturation : </b>  Your software is now available anywhere in the world. Early adopters can directly play with it and participate to its evolution. </li>
+                </ul>" )
+        
+#         @add_service( 
+#             services
+#             "Your collaborative environment",
+#             "FOR MANAGER OF COLLABORATIVE PROGRAM",
+#             "Your description here" )
+            
     
     #bottom of the page--------------------------------------------
     create_bottom: ->
         bottom = @add_part "bottom","#262626" ,"#f6f6f6"  
-        team_title =  new_dom_element
+        bottom_part =  new_dom_element
             parentNode : bottom
             nodeName   : "div" 
             style      :
                 width      : "100%"
-                height     : "800px"
+                height     : "300px"
                 textAlign  : "center"
-
+        
+        bottom_cont =  new_dom_element
+            parentNode : bottom_part
+            nodeName   : "div" 
+            txt        : "&copy; Structure Computation 2014 "
+            style      :
+                cssFloat   : "left"
+                textAlign  : "left"
+                borderRight : "1px solid #f6f6f6 "
     
     # index  ---------------------------------------------------------------------------------------------   
     create_index: ->
@@ -565,9 +781,9 @@ class IndexView extends View
 #         @add_part_separator()
 #         @create_products()
 #         
-#         #Services----------------------------------------------------------
-#         @add_part_separator()
-#         @create_services()
+        #Services----------------------------------------------------------
+        @add_part_separator()
+        @create_services()
         
         #contact----------------------------------------------------------
         @add_part_separator()
