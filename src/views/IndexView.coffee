@@ -735,9 +735,9 @@ class IndexView extends View
             "FOR OFFICES OF TECHNOLOGY TRANSFERT",
             "<b> How to accelerate the maturation of my research software ? </b> <br>
                 We designed around <b> is'sim </b> a new organization covering the essential stages of maturation : <ul type='circle'>
-                <li>  <b> Legal maturation : </b> we propose a standard model for the sharing of IP on a global solution.  </li>
-                <li>  <b> Technical maturation : </b> the association with <b> is'sim </b> makes your software compatible with all other inegrated softwares and gives it standardized ergonomic GUI already known by users. </li>
-                <li>  <b> Commercial maturation : </b>  Your software is now available anywhere in the world. Early adopters can directly play with it and participate to its evolution. </li>
+                <li>  <b> Legal maturation : </b> we propose a standard model for sharing of IP on the global solution.  </li>
+                <li>  <b> Technical maturation : </b> the association with <b> is'sim </b> makes your software compatible with all other inegrated softwares and gives it a standardized ergonomic GUI already known by users. </li>
+                <li>  <b> Commercial maturation : </b>  your software is now available anywhere in the world. Early adopters can directly play with it and participate to its evolution. </li>
                 </ul>" )
         
 #         @add_service( 
