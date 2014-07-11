@@ -172,7 +172,7 @@ class IndexView extends View
                 color : "#4dbce9"
                 fontWeight : "bold"
                 fontSize   : "25px"
-                fontFamily: "'Indie Flower', cursive"
+                fontFamily: "'Indie Flower', sans-serif"
             onclick: ( evt ) ->
                 window.location = "login.html" 
             
