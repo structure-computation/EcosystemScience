@@ -166,12 +166,12 @@ class IndexView extends View
             parentNode : menu
             nodeName   : "div" 
             className  : "indexMenuButton"
-            txt        : "is'sim beta ->"
+            txt        : "is'sim beta"
             style : 
                 cssFloat : "right"
                 color : "#4dbce9"
                 fontWeight : "bold"
-                fontSize   : "25px"
+                fontSize   : "23px"
                 fontFamily: "'Indie Flower', sans-serif"
             onclick: ( evt ) ->
                 window.location = "login.html" 
@@ -236,6 +236,11 @@ class IndexView extends View
             nodeName   : "div" 
             txt        : 'Access & use all your data and applications everywhere through your web browser. This is simple !'  
             className  : "presentationIndiTextCol"
+            style      :
+                width : "90%"
+                padding  : "0px 10px 0px 10px"
+                
+                
         
 
         col2 = @add_col(3, key_idea)
@@ -249,7 +254,10 @@ class IndexView extends View
             nodeName   : "div" 
             txt        : 'Share and modify all your data (text, project, 3D...) in real time !'  
             className  : "presentationIndiTextCol"   
-            
+            style      :
+                width : "90%"
+                padding  : "0px 10px 0px 10px"
+                
             
         col3 = @add_col(3, key_idea)
         new_dom_element
@@ -262,6 +270,10 @@ class IndexView extends View
             nodeName   : "div" 
             txt        : 'Use remote powerful resources ond demand. Fit them to your needs !'  
             className  : "presentationIndiTextCol"
+            style      :
+                width : "90%"
+                padding  : "0px 10px 0px 10px"
+                
         
         biglogo = @add_col(1, key_idea)
         new_dom_element
