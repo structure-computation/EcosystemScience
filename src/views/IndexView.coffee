@@ -204,7 +204,7 @@ class IndexView extends View
         presentation_title =  new_dom_element
             parentNode : presentation
             nodeName   : "div" 
-            txt        : "Try is'sim beta now ->"  
+            txt        : "Try is'sim beta now"  
             style      :
                 width      : "100%"
                 height     : 40
@@ -213,7 +213,7 @@ class IndexView extends View
                 fontWeight : "bold"
                 margin  : "20px 0 10px 0"
                 textAlign  : "center"
-                fontFamily: "'Indie Flower', cursive"
+                fontFamily: "'Indie Flower', sans-serif"
                 cssFloat      : "left"
                 cursor : "pointer"
                 color : "#4dbce9"
