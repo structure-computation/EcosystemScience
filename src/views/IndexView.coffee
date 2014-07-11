@@ -715,7 +715,7 @@ class IndexView extends View
             services
             "Recurring <br> business <br> model",
             "FOR OPEN SOURCE SOFTWARE EDITORS",
-            "<b> How to secure my business with recurring income? </b> <br>
+            "<b> How to secure my business with recurring income ? </b> <br>
                 The direct answer is: by selling a quality service that simplifies the lives of your clients and that is recurrent...<br>
                 <b> is'sim </b> team invites you to make your software available in SaaS mode and thus offer a large number of your users 
                 the ability to simply use your applications without installation or maintenance constraints, equipment purchase...
@@ -725,7 +725,7 @@ class IndexView extends View
             services
             "Online Applicative journal",
             "FOR RESEARCH LABORATORIES",
-            "<b> How to improve visibility of my research and sustain my algorithm development? </b> <br>
+            "<b> How to improve visibility of my research and sustain my algorithm development ? </b> <br>
                 You can now use your algorithms as a communication medium of your research. With <b> is'sim </b> you associate 
                 with each of your articles an online demonstrator of the algorithm which implements the method described. 
                 You make your research reproducible, sustainable and give it a more practical aspect. Your works are understandable 
@@ -735,7 +735,7 @@ class IndexView extends View
             services
             "Maturation <br> of research algorithms",
             "FOR OFFICES OF TECHNOLOGY TRANSFERT",
-            "<b> How to accelerate the maturation of my research software? </b> <br>
+            "<b> How to accelerate the maturation of my research software ? </b> <br>
                 We designed around <b> is'sim </b> a new organization covering the essential stages of maturation : <ul type='circle'>
                 <li>  <b> Legal maturation : </b> we propose a standard model for the sharing of IP on a global solution.  </li>
                 <li>  <b> Technical maturation : </b> the association with <b> is'sim </b> makes your software compatible with all other inegrated softwares and gives it standardized ergonomic GUI already known by users. </li>
