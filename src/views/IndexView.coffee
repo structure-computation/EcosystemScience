@@ -166,7 +166,7 @@ class IndexView extends View
             parentNode : menu
             nodeName   : "div" 
             className  : "indexMenuButton"
-            txt        : "is'sim beta"
+            txt        : "is'sim beta ->"
             style : 
                 cssFloat : "right"
                 color : "#4dbce9"
@@ -204,7 +204,7 @@ class IndexView extends View
         presentation_title =  new_dom_element
             parentNode : presentation
             nodeName   : "div" 
-            txt        : "Try is'sim beta now"  
+            txt        : "Try is'sim beta now ->"  
             style      :
                 width      : "100%"
                 height     : 40
