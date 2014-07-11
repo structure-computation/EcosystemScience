@@ -34,24 +34,13 @@ body {
     font-size  : 11px;
     overflow-y: hidden;
     overflow-x: hidden;
-    
-    -webkit-animation-delay: 0.1s;
-    -webkit-animation-name: fontfix;
-    -webkit-animation-duration: 0.1s;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: linear;
 }
 
-@-webkit-keyframes fontfix {
-    from { opacity: 1; }
-    to   { opacity: 1; }
-}
-
-@font-face {
+/*@font-face {
   font-family: 'Indie Flower';
   font-style: normal;
   font-weight: 400;
   src: local('Indie Flower'), local('IndieFlower'), url(http://themes.googleusercontent.com/static/fonts/indieflower/v5/10JVD_humAd5zP2yrFqw6nhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
+}*/
 
 
