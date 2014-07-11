@@ -166,12 +166,15 @@ class IndexView extends View
             parentNode : menu
             nodeName   : "div" 
             className  : "indexMenuButton"
-            txt        : "Login"
+            txt        : "is'sim beta ->"
             style : 
                 cssFloat : "right"
                 color : "#4dbce9"
+                fontWeight : "bold"
+                fontSize   : "25px"
+                fontFamily: "'Indie Flower', cursive"
             onclick: ( evt ) ->
-                window.location = "desk.html" 
+                window.location = "login.html" 
             
             
         top = @add_part "top"
@@ -201,15 +204,22 @@ class IndexView extends View
         presentation_title =  new_dom_element
             parentNode : presentation
             nodeName   : "div" 
-            #txt        : 'Scientific SaaS Solution'  
+            txt        : "Try is'sim beta now ->"  
             style      :
                 width      : "100%"
-                height     : "30px"
+                height     : 40
+                border     : "none"
+                fontSize   : "35px"
+                fontWeight : "bold"
+                margin  : "20px 0 10px 0"
                 textAlign  : "center"
-                #fontWeight : "bold"
-                fontSize   : "38px"
-                color      : "#262626"
+                fontFamily: "'Indie Flower', cursive"
                 cssFloat      : "left"
+                cursor : "pointer"
+                color : "#4dbce9"
+                
+            onclick: ( evt ) ->
+                window.location = "login.html" 
         
          
         #key idea ---------------------------------------        
@@ -699,7 +709,7 @@ class IndexView extends View
                 SaaS distribution is the key way to increase your sales potential without massive investments. 
                 <b> is'sim </b> team assists you in this transition, first by providing an online demo of your software accessible from your website  
                 then gradually integrating all the functions into a full online version and building your new business model. <br>
-                Whether your software is simple or highly technical, our hybrid SaaS solution fits to your needs." )
+                Whether your software is simple or highly technical, <b> is'sim </b> hybrid SaaS solution fits to your needs and gives new collaborative abilities to your software." )
             
         @add_service( 
             services
@@ -708,7 +718,7 @@ class IndexView extends View
             "<b> How to secure my business with recurring income? </b> <br>
                 The direct answer is: by selling a quality service that simplifies the lives of your clients and that is recurrent...<br>
                 <b> is'sim </b> team invites you to make your software available in SaaS mode and thus offer a large number of your users 
-                the ability to simply use your aplications without installation or maintenance constraints, equipment purchase...
+                the ability to simply use your applications without installation or maintenance constraints, equipment purchase...
                 You give new collaborative abilities to your software and secure your business with recurring income." )
         
         @add_service( 
@@ -753,11 +763,39 @@ class IndexView extends View
         bottom_cont =  new_dom_element
             parentNode : bottom_part
             nodeName   : "div" 
+            txt        : "Designed and built by <b> is'sim </b> team. "
+            style      :
+                cssFloat   : "left"
+                textAlign  : "left"
+                padding : "0 10px 0 0"
+                borderRight : "1px solid #f6f6f6 "
+                
+        new_dom_element
+            parentNode : bottom_part
+            nodeName   : "div" 
             txt        : "&copy; Structure Computation 2014 "
             style      :
                 cssFloat   : "left"
                 textAlign  : "left"
                 borderRight : "1px solid #f6f6f6 "
+                padding : "0 10px 0 10px"
+                
+        new_dom_element
+            parentNode : bottom_part
+            nodeName   : "div" 
+            txt        : "<b> is'sim </b> is a trademark of Structure Computation "
+            style      :
+                cssFloat   : "left"
+                textAlign  : "left"
+                padding : "0 10px 0 10px"
+                
+        new_dom_element
+            parentNode : bottom_part
+            nodeName   : "img" 
+            src        : "img/Logo_StructureComputation_gris.png"
+            style      :
+                cssFloat   : "right"
+                textAlign  : "left"
     
     # index  ---------------------------------------------------------------------------------------------   
     create_index: ->
