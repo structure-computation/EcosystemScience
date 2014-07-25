@@ -166,7 +166,7 @@ class IndexView extends View
             parentNode : menu
             nodeName   : "div" 
             className  : "indexMenuButton"
-            txt        : "is'sim beta ->"
+            txt        : "is-sim beta ->"
             style : 
                 cssFloat : "right"
                 color : "#4dbce9"
@@ -190,7 +190,7 @@ class IndexView extends View
         presentation_title =  new_dom_element
             parentNode : presentation
             nodeName   : "div" 
-            txt        : "is'sim" 
+            txt        : "is-sim" 
             className  : "indexcenterpartTitle"
         
         presentation_video =  new_dom_element
@@ -204,7 +204,7 @@ class IndexView extends View
         presentation_title =  new_dom_element
             parentNode : presentation
             nodeName   : "div" 
-            txt        : "Try is'sim beta now ->"  
+            txt        : "Try is-sim beta now ->"  
             style      :
                 width      : "100%"
                 height     : 40
@@ -361,7 +361,7 @@ class IndexView extends View
         new_dom_element
             parentNode : goal
             nodeName   : "div" 
-            txt        : "<b>is'sim</b> was founded on the basis of several observations: <ul type='circle'>
+            txt        : "<b>is-sim</b> was founded on the basis of several observations: <ul type='circle'>
                               <li> cost of simulation tools (software, hardware, maintenance) is too high</li>
                               <li> simulation solutions are inaccessible to a large number of small companies</li>
                               <li> new HPC needs lead to a demand for new and more flexible usages</li>
@@ -372,9 +372,9 @@ class IndexView extends View
                           </ul>
                           <br> Our goals are ambitious: solve all of these problems with an efficient, simple and affordable solution !
                           <br> 
-                          <br> For this end, we have designed <b>is'sim</b>  platform, accessible in SaaS mode and open to third party solutions. Best simulation applications will soon be available on demand, in a unified environment managing simulation data and interoperability between applications.
+                          <br> For this end, we have designed <b>is-sim</b>  platform, accessible in SaaS mode and open to third party solutions. Best simulation applications will soon be available on demand, in a unified environment managing simulation data and interoperability between applications.
                           <br> 
-                          <br> <b>is'sim</b> , the result of 6 years of development around the latest web and HPC technologies will revolutionize design projects based on simulation."  
+                          <br> <b>is-sim</b> , the result of 6 years of development around the latest web and HPC technologies will revolutionize design projects based on simulation."  
             style      :
                 textAlign  : "justify"
         
@@ -579,7 +579,7 @@ class IndexView extends View
         new_dom_element
             parentNode : description
             nodeName   : "div" 
-            txt        : "<b> is'sim </b> is a real time collaborative solution for design applications. This web-based operating system offers powerfull tools to any user needing to realise design simulations and to any editors needing SaaS version of their software. <b> is'sim </b> provide, in a unified environment, the best third party tools, standard software as well as High Performance Computing software. All these tools are served by a unified and dynamic web interface and a unified data format. Associated with the power of cloud computing and centralization of computing means, software licenses and data, <b>is'sim</b> is to become the first and most powerful collaborative SaaS solution."  
+            txt        : "<b> is-sim </b> is a real time collaborative solution for design applications. This web-based operating system offers powerfull tools to any user needing to realise design simulations and to any editors needing SaaS version of their software. <b> is-sim </b> provide, in a unified environment, the best third party tools, standard software as well as High Performance Computing software. All these tools are served by a unified and dynamic web interface and a unified data format. Associated with the power of cloud computing and centralization of computing means, software licenses and data, <b>is-sim</b> is to become the first and most powerful collaborative SaaS solution."  
             style      :
                 textAlign  : "justify"
                 
@@ -705,9 +705,9 @@ class IndexView extends View
             "FOR SOFTWARE EDITORS",
             "<b> How to commercialize my software worldwide with a small sales force ? </b> <br>
                 SaaS distribution is the key way to increase your sales potential without massive investments. 
-                <b> is'sim </b> team assists you in this transition, first by providing an online demo of your software accessible from your website  
+                <b> is-sim </b> team assists you in this transition, first by providing an online demo of your software accessible from your website  
                 then gradually integrating all the functions into a full online version and building your new business model. <br>
-                Whether your software is simple or highly technical, <b> is'sim </b> hybrid SaaS solution fits to your needs and gives new collaborative abilities to your software." )
+                Whether your software is simple or highly technical, <b> is-sim </b> hybrid SaaS solution fits to your needs and gives new collaborative abilities to your software." )
             
         @add_service( 
             services
@@ -715,7 +715,7 @@ class IndexView extends View
             "FOR OPEN SOURCE SOFTWARE EDITORS",
             "<b> How to secure my business with recurring income ? </b> <br>
                 The direct answer is: by selling a quality service that simplifies the lives of your clients and that is recurrent...<br>
-                <b> is'sim </b> team invites you to make your software available in SaaS mode and thus offer a large number of your users 
+                <b> is-sim </b> team invites you to make your software available in SaaS mode and thus offer a large number of your users 
                 the ability to simply use your applications without installation or maintenance constraints, equipment purchase...
                 You give new collaborative abilities to your software and secure your business with recurring income." )
         
@@ -724,7 +724,7 @@ class IndexView extends View
             "Online Applicative journal",
             "FOR RESEARCH LABORATORIES",
             "<b> How to improve visibility of my research and sustain my algorithm development ? </b> <br>
-                You can now use your algorithms as a communication medium of your research. With <b> is'sim </b> you associate 
+                You can now use your algorithms as a communication medium of your research. With <b> is-sim </b> you associate 
                 with each of your articles an online demonstrator of the algorithm which implements the method described. 
                 You make your research reproducible, sustainable and give it a more practical aspect. Your works are understandable 
                 by a greater number of people who can bring you new research contracts." )
@@ -734,9 +734,9 @@ class IndexView extends View
             "Maturation <br> of research algorithms",
             "FOR OFFICES OF TECHNOLOGY TRANSFERT",
             "<b> How to accelerate the maturation of my research software ? </b> <br>
-                We designed around <b> is'sim </b> a new organization covering the essential stages of maturation : <ul type='circle'>
+                We designed around <b> is-sim </b> a new organization covering the essential stages of maturation : <ul type='circle'>
                 <li>  <b> Legal maturation : </b> we propose a standard model for sharing of IP on the global solution.  </li>
-                <li>  <b> Technical maturation : </b> the association with <b> is'sim </b> makes your software compatible with all other inegrated softwares and gives it a standardized ergonomic GUI already known by users. </li>
+                <li>  <b> Technical maturation : </b> the association with <b> is-sim </b> makes your software compatible with all other inegrated softwares and gives it a standardized ergonomic GUI already known by users. </li>
                 <li>  <b> Commercial maturation : </b>  your software is now available anywhere in the world. Early adopters can directly play with it and participate to its evolution. </li>
                 </ul>" )
         
@@ -761,7 +761,7 @@ class IndexView extends View
         bottom_cont =  new_dom_element
             parentNode : bottom_part
             nodeName   : "div" 
-            txt        : "Designed and built by <b> is'sim </b> team. "
+            txt        : "Designed and built by <b> is-sim </b> team. "
             style      :
                 cssFloat   : "left"
                 textAlign  : "left"
@@ -781,7 +781,7 @@ class IndexView extends View
         new_dom_element
             parentNode : bottom_part
             nodeName   : "div" 
-            txt        : "<b> is'sim </b> is a trademark of Structure Computation "
+            txt        : "<b> is-sim </b> is a trademark of Structure Computation "
             style      :
                 cssFloat   : "left"
                 textAlign  : "left"
