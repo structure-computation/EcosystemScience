@@ -12,7 +12,7 @@ class MesherItem extends TreeItem_Computable
             p_mesher     : new Lst
 
         @_name.set name
-        @_ico.set "img/mesher.png"
+#         @_ico.set "img/mesher.png"
         @_viewable.set true
         
         @visualization.display_style.num.set 1

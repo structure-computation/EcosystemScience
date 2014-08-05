@@ -29,13 +29,44 @@ class IndexView extends View
             nodeName   : "div" 
             className  : "indexBackground"    
         
+        #valeur par defaut
+#         @backgroundColor = 
+#             first : "#262626"
+#             second : "#f6f6f6"
+#             separator : "#e6e6e6"
+#             highlight : "#4dbce9"
+#             
+#         @textColor = 
+#             first : "#f6f6f6"
+#             second : "#262626"
+#             highlight : "#4dbce9"
+#             
+#         @lineColor = 
+#             first : "1px solid #f6f6f6 "
+#             second : "1px solid #262626 "
+#             highlight : "1px solid #4dbce9 "
+        
+        
+        #valeur test
+        @backgroundColor = 
+            first : "#262626"
+            second : "#f6f6f6"
+            separator : "#e6e6e6"
+            highlight : "#4dbce9"
+            
+        @textColor = 
+            first : "#f6f6f6"
+            second : "#262626"
+            highlight : "#4dbce9"
+            
+        @lineColor = 
+            first : "1px solid #f6f6f6 "
+            second : "1px solid #262626 "
+            highlight : "1px solid #4dbce9 "
+        
         @create_index()
         
-#         @container_video = new_dom_element
-#             parentNode : @page_container
-#             nodeName   : "div" 
-#             className  : "LoginBackground"
-#             txt        : '<iframe width="560" height="315" src="//www.youtube.com/embed/K1MVV_nG8BI?rel=0" frameborder="0" allowfullscreen></iframe>'
+
         
         
     
@@ -50,7 +81,7 @@ class IndexView extends View
             className  : "indexpart"
             style :
                 height : 200
-                background : "#e6e6e6"
+                background : @backgroundColor.separator
     
     add_part: ( name, background = "", color = "", fixed = "" ) ->
         part = new_dom_element
@@ -90,7 +121,7 @@ class IndexView extends View
     
     
     create_menu: ->
-        menu = @add_part "menu", "#262626", "#f6f6f6", "fixed"
+        menu = @add_part "menu", @backgroundColor.first, @textColor.first, "fixed"
         
         menu_logo = new_dom_element
             parentNode : menu
@@ -169,7 +200,7 @@ class IndexView extends View
             txt        : "is-sim beta ->"
             style : 
                 cssFloat : "right"
-                color : "#4dbce9"
+                color : @textColor.highlight
                 fontWeight : "bold"
                 fontSize   : "23px"
                 fontFamily: "'Indie Flower', sans-serif"
@@ -186,7 +217,7 @@ class IndexView extends View
  
     #presentation-----------------------------------------------------------------------
     create_presentation: ->
-        presentation = @add_part "presentation", "#f6f6f6", "#262626"   
+        presentation = @add_part "presentation", @backgroundColor.second, @textColor.second 
         presentation_title =  new_dom_element
             parentNode : presentation
             nodeName   : "div" 
@@ -216,14 +247,14 @@ class IndexView extends View
                 fontFamily: "'Indie Flower', sans-serif"
                 cssFloat      : "left"
                 cursor : "pointer"
-                color : "#4dbce9"
+                color : @textColor.highlight
                 
             onclick: ( evt ) ->
                 window.location = "login.html" 
         
          
         #key idea ---------------------------------------        
-        key_idea = @add_part "key_idea", "#262626" , "#f6f6f6"
+        key_idea = @add_part "key_idea", @backgroundColor.first, @textColor.first
 
         col1 = @add_col(3, key_idea)
         new_dom_element
@@ -273,7 +304,7 @@ class IndexView extends View
             
     #company -----------------------------------------------------------------------------        
     create_team: ->
-        team = @add_part "team", "#f6f6f6" ,  "#262626"  
+        team = @add_part "team", @backgroundColor.second, @textColor.second 
         team_title =  new_dom_element
             parentNode : team
             nodeName   : "div" 
@@ -352,7 +383,7 @@ class IndexView extends View
                 width      : "100%"
         
         #goal----------------------------------------------------------------------
-        goal = @add_part "objectif", "#f6f6f6" ,  "#262626"  
+        goal = @add_part "objectif", @backgroundColor.second, @textColor.second 
         goal_title =  new_dom_element
             parentNode : goal
             nodeName   : "div" 
@@ -380,7 +411,7 @@ class IndexView extends View
         
 
         #awards ---------------------------------------------------------
-        awards = @add_part "awards","#f6f6f6" ,"#262626"   
+        awards = @add_part "awards", @backgroundColor.second, @textColor.second   
         awards_title =  new_dom_element
             parentNode : awards
             nodeName   : "div" 
@@ -411,7 +442,7 @@ class IndexView extends View
             width     : "250"
         
         #partners ---------------------------------------------------------
-        partners = @add_part "partners","#f6f6f6" ,"#262626"   
+        partners = @add_part "partners", @backgroundColor.second, @textColor.second   
         partners_title =  new_dom_element
             parentNode : partners
             nodeName   : "div" 
@@ -458,7 +489,7 @@ class IndexView extends View
     
     #contact--------------------------------------------
     create_contact: ->
-        contact = @add_part "contact", "#f6f6f6", "#262626"  
+        contact = @add_part "contact", @backgroundColor.second, @textColor.second  
         contact.style.textAlign = "center"
         contact_title =  new_dom_element
             parentNode : contact
@@ -491,7 +522,7 @@ class IndexView extends View
 
     #Solution--------------------------------------------
     create_solution: ->
-        presentation = @add_part "solution", "#f6f6f6", "#262626"  
+        presentation = @add_part "solution", @backgroundColor.second, @textColor.second   
         solution.style.textAlign = "center"
         contact_title =  new_dom_element
             parentNode : solution
@@ -574,7 +605,7 @@ class IndexView extends View
         
         
         #description ---------------------------------------   
-        description = @add_part "description", "#262626", "#f6f6f6"  
+        description = @add_part "description", @backgroundColor.first, @textColor.first   
         description.style.textAlign = "center"
         new_dom_element
             parentNode : description
@@ -627,7 +658,7 @@ class IndexView extends View
     
     #Products--------------------------------------------
     create_products: ->
-        products = @add_part "products", "#f6f6f6", "#262626"  
+        products = @add_part "products", @backgroundColor.second, @textColor.second 
         products.style.textAlign = "center"
         contact_title =  new_dom_element
             parentNode : products
@@ -641,7 +672,6 @@ class IndexView extends View
             parentNode : parent
             nodeName   : "div" 
             style      :
-#                 border     : "1px solid #4dbce9"
                 cssFloat   : "left" 
                 margin     : "10px 0px 10px 0"
         short = new_dom_element
@@ -653,9 +683,9 @@ class IndexView extends View
                 textAlign  : "center"
                 fontWeight : "bold"
                 fontSize   : "25px"
-                color      : "#f6f6f6"
+                color      : @textColor.first
                 margin     : "0px 30px 0px 0"
-                background : "#4dbce9"
+                background : @backgroundColor.highlight
                 cssFloat   : "left"
                 
         new_dom_element
@@ -691,7 +721,7 @@ class IndexView extends View
                 cssFloat   : "left"
     
     create_services: ->
-        services = @add_part "services", "#f6f6f6", "#262626"  
+        services = @add_part "services", @backgroundColor.second, @textColor.second 
         services.style.textAlign = "center"
         contact_title =  new_dom_element
             parentNode : services
@@ -749,7 +779,7 @@ class IndexView extends View
     
     #bottom of the page--------------------------------------------
     create_bottom: ->
-        bottom = @add_part "bottom","#262626" ,"#f6f6f6"  
+        bottom = @add_part "bottom", @backgroundColor.first, @textColor.first
         bottom_part =  new_dom_element
             parentNode : bottom
             nodeName   : "div" 
@@ -766,7 +796,7 @@ class IndexView extends View
                 cssFloat   : "left"
                 textAlign  : "left"
                 padding : "0 10px 0 0"
-                borderRight : "1px solid #f6f6f6 "
+                borderRight : @lineColor.first
                 
         new_dom_element
             parentNode : bottom_part
@@ -775,7 +805,7 @@ class IndexView extends View
             style      :
                 cssFloat   : "left"
                 textAlign  : "left"
-                borderRight : "1px solid #f6f6f6 "
+                borderRight : @lineColor.first
                 padding : "0 10px 0 10px"
                 
         new_dom_element
@@ -816,7 +846,7 @@ class IndexView extends View
 #         #Products----------------------------------------------------------
 #         @add_part_separator()
 #         @create_products()
-#         
+       
         #Services----------------------------------------------------------
         @add_part_separator()
         @create_services()
@@ -824,8 +854,7 @@ class IndexView extends View
         #contact----------------------------------------------------------
         @add_part_separator()
         @create_contact()
-        
-        
+
         #page bottom----------------------------------------------------------
         @create_bottom()
         
