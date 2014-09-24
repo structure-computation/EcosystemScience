@@ -5,7 +5,7 @@ class FieldSetItem extends TreeItem
         
         # default values
         @_name.set name
-        @_ico.set "img/part_collection.png"
+#         @_ico.set "img/part_collection.png"
         @_viewable.set true
         
         # attributes

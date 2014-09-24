@@ -17,5 +17,6 @@ class TreeAppApplication_Test extends TreeAppApplication
             ina: _ina
             fun: ( evt, app ) =>
                 app.undo_manager.snapshot()
-                test = @add_item_depending_selected_tree app.data, TestCollectionTreeItem
-        
+                test = @add_item_depending_selected_tree app.data, ImgDirectorySetItem, (object) =>
+                            object.time = app.data.time
+                            object._app_data = app.data

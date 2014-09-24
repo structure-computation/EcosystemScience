@@ -4,7 +4,7 @@ class GridItem extends TreeItem
         super()
          
         @_name.set name
-        @_ico.set "img/note.png"
+#         @_ico.set "img/note.png"
         @_viewable.set true
         
         

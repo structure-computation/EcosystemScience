@@ -18,7 +18,7 @@
 
 
 #
-class IndexView extends View
+class JournalView extends View
     constructor: ( @el ) ->
         @page_container = new_dom_element
             nodeName  : "div"
@@ -29,44 +29,13 @@ class IndexView extends View
             nodeName   : "div" 
             className  : "indexBackground"    
         
-        #valeur par defaut
-#         @backgroundColor = 
-#             first : "#262626"
-#             second : "#f6f6f6"
-#             separator : "#e6e6e6"
-#             highlight : "#4dbce9"
-#             
-#         @textColor = 
-#             first : "#f6f6f6"
-#             second : "#262626"
-#             highlight : "#4dbce9"
-#             
-#         @lineColor = 
-#             first : "1px solid #f6f6f6 "
-#             second : "1px solid #262626 "
-#             highlight : "1px solid #4dbce9 "
+        @create_view()
         
-        
-        #valeur test
-        @backgroundColor = 
-            first : "#262626"
-            second : "#f6f6f6"
-            separator : "#e6e6e6"
-            highlight : "#4dbce9"
-            
-        @textColor = 
-            first : "#f6f6f6"
-            second : "#262626"
-            highlight : "#4dbce9"
-            
-        @lineColor = 
-            first : "1px solid #f6f6f6 "
-            second : "1px solid #262626 "
-            highlight : "1px solid #4dbce9 "
-        
-        @create_index()
-        
-
+#         @container_video = new_dom_element
+#             parentNode : @page_container
+#             nodeName   : "div" 
+#             className  : "LoginBackground"
+#             txt        : '<iframe width="560" height="315" src="//www.youtube.com/embed/K1MVV_nG8BI?rel=0" frameborder="0" allowfullscreen></iframe>'
         
         
     
@@ -81,7 +50,7 @@ class IndexView extends View
             className  : "indexpart"
             style :
                 height : 200
-                background : @backgroundColor.separator
+                background : "#e6e6e6"
     
     add_part: ( name, background = "", color = "", fixed = "" ) ->
         part = new_dom_element
@@ -121,7 +90,7 @@ class IndexView extends View
     
     
     create_menu: ->
-        menu = @add_part "menu", @backgroundColor.first, @textColor.first, "fixed"
+        menu = @add_part "menu", "#262626", "#f6f6f6", "fixed"
         
         menu_logo = new_dom_element
             parentNode : menu
@@ -132,10 +101,10 @@ class IndexView extends View
             parentNode : menu
             nodeName   : "div" 
             className  : "indexMenuButton"
-            txt        : "Presentation"
+            txt        : "Article"
             onclick: ( evt ) ->
                 $(document.body).animate
-                    scrollTop:   $('#presentation').offset().top - 80
+                    scrollTop:   $('#article').offset().top - 80
                     1500
 #             onclick: ( evt ) ->
 #                 $('#presentation').animate
@@ -147,65 +116,45 @@ class IndexView extends View
             parentNode : menu
             nodeName   : "div" 
             className  : "indexMenuButton"
-            txt        : "Company"
+            txt        : "Demo"
             onclick: ( evt ) ->
                 $(document.body).animate
-                    scrollTop:   $('#team').offset().top - 80
+                    scrollTop:   $('#demo').offset().top - 80
                     1500
 
         menu_product = new_dom_element
             parentNode : menu
             nodeName   : "div" 
             className  : "indexMenuButton"
-            txt        : "Solution"
+            txt        : "Video"
             onclick: ( evt ) ->
                 $(document.body).animate
                     scrollTop:   $('#solution').offset().top - 80
                     1500
-        
-#         menu_product = new_dom_element
-#             parentNode : menu
-#             nodeName   : "div" 
-#             className  : "indexMenuButton"
-#             txt        : "Products"
-#             onclick: ( evt ) ->
-#                 $(document.body).animate
-#                     scrollTop:   $('#products').offset().top - 80
-#                     1500
-#             
+                   
         menu_offer = new_dom_element
             parentNode : menu
             nodeName   : "div" 
             className  : "indexMenuButton"
-            txt        : "Services"
+            txt        : "Informations"
             onclick: ( evt ) ->
                 $(document.body).animate
                     scrollTop:   $('#services').offset().top - 80
                     1500
             
-        menu_contact = new_dom_element
-            parentNode : menu
-            nodeName   : "div" 
-            className  : "indexMenuButton"
-            txt        : "Contact"
-            onclick: ( evt ) ->
-                $(document.body).animate
-                    scrollTop:   $('#contact').offset().top - 80
-                    1500
-            
-        menu_login = new_dom_element
-            parentNode : menu
-            nodeName   : "div" 
-            className  : "indexMenuButton"
-            txt        : "is-sim beta ->"
-            style : 
-                cssFloat : "right"
-                color : @textColor.highlight
-                fontWeight : "bold"
-                fontSize   : "23px"
-                fontFamily: "'Indie Flower', sans-serif"
-            onclick: ( evt ) ->
-                window.location = "login.html" 
+#         menu_login = new_dom_element
+#             parentNode : menu
+#             nodeName   : "div" 
+#             className  : "indexMenuButton"
+#             txt        : "is-sim beta ->"
+#             style : 
+#                 cssFloat : "right"
+#                 color : "#4dbce9"
+#                 fontWeight : "bold"
+#                 fontSize   : "23px"
+#                 fontFamily: "'Indie Flower', sans-serif"
+#             onclick: ( evt ) ->
+#                 window.location = "login.html" 
             
             
         top = @add_part "top"
@@ -216,95 +165,135 @@ class IndexView extends View
                 height     : "30px"
  
     #presentation-----------------------------------------------------------------------
-    create_presentation: ->
-        presentation = @add_part "presentation", @backgroundColor.second, @textColor.second 
+    create_article: ->
+        article = @add_part "article", "#f6f6f6", "#262626"   
         presentation_title =  new_dom_element
-            parentNode : presentation
+            parentNode : article
             nodeName   : "div" 
-            txt        : "is-sim" 
+            txt        : "Abstract" 
             className  : "indexcenterpartTitle"
         
-        presentation_video =  new_dom_element
-            parentNode : presentation
+        new_dom_element
+            parentNode : article
             nodeName   : "div" 
-            txt        : '<iframe width="853" height="480" src="//www.youtube.com/embed/K1MVV_nG8BI?rel=0" frameborder="0" allowfullscreen></iframe>'  
+            txt        : "While many segmentation methods rely heavily in some way on edge detection, the \"Active Contours Without Edges\" method by Chan and Vese ignores edges completely. 
+                            Instead, the method optimally fits a two-phase piecewise constant model to the given image. The segmentation boundary is represented implicitly with a level set 
+                            function, which allows the segmentation to handle topological changes more easily than explicit snake methods.
+                            This article describes the level set formulation of the Chan–Vese model and its numerical solution using a 
+                            semi-implicit gradient descent. We also discuss the Chan–Sandberg–Vese method, a straightforward extension 
+                            of Chan–Vese for vector-valued images."  
             style      :
-                margin     : "0px 0 0 123px"
-                cssFloat      : "left"
-        
-        presentation_title =  new_dom_element
-            parentNode : presentation
-            nodeName   : "div" 
-            txt        : "Try is-sim beta now ->"  
-            style      :
-                width      : "100%"
-                height     : 40
-                border     : "none"
-                fontSize   : "35px"
-                fontWeight : "bold"
-                margin  : "20px 0 10px 0"
-                textAlign  : "center"
-                fontFamily : "'Indie Flower', sans-serif"
-                cssFloat      : "left"
-                cursor : "pointer"
-                color : @textColor.highlight
+                textAlign  : "justify"
                 
-            onclick: ( evt ) ->
-                window.location = "login.html" 
+        presentation_title =  new_dom_element
+            parentNode : article
+            nodeName   : "div" 
+            txt        : "Preview" 
+            className  : "indexcenterpartTitle"
         
-         
-        #key idea ---------------------------------------        
-        key_idea = @add_part "key_idea", @backgroundColor.first, @textColor.first
-
-        col1 = @add_col(3, key_idea)
-        new_dom_element
-            parentNode : col1
-            nodeName   : "div" 
-            txt        : 'CONNECT'  
-            className  : "presentationBigTitleCol"
-        new_dom_element
-            parentNode : col1
-            nodeName   : "div" 
-            txt        : 'Access & use all your data and applications everywhere through your web browser. This is simple !'  
-            className  : "presentationIndiTextCol"
-
-        col2 = @add_col(3, key_idea)
-        new_dom_element
-            parentNode : col2
-            nodeName   : "div" 
-            txt        : 'COLLABORATE'  
-            className  : "presentationBigTitleCol"
-        new_dom_element
-            parentNode : col2
-            nodeName   : "div" 
-            txt        : 'Share and modify all your data (text, project, 3D...) in real time !'  
-            className  : "presentationIndiTextCol"   
-            
-        col3 = @add_col(3, key_idea)
-        new_dom_element
-            parentNode : col3
-            nodeName   : "div" 
-            txt        : 'COMPUTE'  
-            className  : "presentationBigTitleCol"
-        new_dom_element
-            parentNode : col3
-            nodeName   : "div" 
-            txt        : 'Use remote powerful resources ond demand. Fit them to your needs !'  
-            className  : "presentationIndiTextCol"
         
-        biglogo = @add_col(1, key_idea)
         new_dom_element
-            parentNode : biglogo
-            nodeName  : "img"
-            src       : "img/biglogo.png"
-            alt       : "logo"
-            title     : "logo"
+            parentNode : article
+            nodeName   : "div"
+            txt        : '<iframe  width="1000" height="1400"  id="pdfviewer"
+                            src="http://docs.google.com/viewer?url=http://www.ipol.im/pub/art/2012/g-cv//article_lr.pdf&amp;embedded=true">Preview not available in your browser.</iframe>
+                            </div>' 
             style      :
-                margin: "0 0 20px 0"    
+                textAlign  : "center"
+                width  : "100%"
+                
+        
+#         new_dom_element
+#             parentNode : article
+#             nodeName   : "iframe"
+#             id         : "pdfviewer"
+#             src        : "http://docs.google.com/viewer?url=http://www.ipol.im/pub/art/2012/g-cv//article_lr.pdf&amp;embedded=true"
+#             txt        : "Preview not available in your browser." 
+#             style      :
+#                 width  : "1000px"
+#                 height  : "2000px"
+        
+#         presentation_video =  new_dom_element
+#             parentNode : presentation
+#             nodeName   : "div" 
+#             txt        : '<iframe width="853" height="480" src="//www.youtube.com/embed/K1MVV_nG8BI?rel=0" frameborder="0" allowfullscreen></iframe>'  
+#             style      :
+#                 margin     : "0px 0 0 123px"
+#                 cssFloat      : "left"
+#         
+#         presentation_title =  new_dom_element
+#             parentNode : presentation
+#             nodeName   : "div" 
+#             txt        : "Try is-sim beta now ->"  
+#             style      :
+#                 width      : "100%"
+#                 height     : 40
+#                 border     : "none"
+#                 fontSize   : "35px"
+#                 fontWeight : "bold"
+#                 margin  : "20px 0 10px 0"
+#                 textAlign  : "center"
+#                 fontFamily: "'Indie Flower', sans-serif"
+#                 cssFloat      : "left"
+#                 cursor : "pointer"
+#                 color : "#4dbce9"
+#                 
+#             onclick: ( evt ) ->
+#                 window.location = "login.html" 
+#         
+#          
+#         #key idea ---------------------------------------        
+#         key_idea = @add_part "key_idea", "#262626" , "#f6f6f6"
+# 
+#         col1 = @add_col(3, key_idea)
+#         new_dom_element
+#             parentNode : col1
+#             nodeName   : "div" 
+#             txt        : 'CONNECT'  
+#             className  : "presentationBigTitleCol"
+#         new_dom_element
+#             parentNode : col1
+#             nodeName   : "div" 
+#             txt        : 'Access & use all your data and applications everywhere through your web browser. This is simple !'  
+#             className  : "presentationIndiTextCol"
+# 
+#         col2 = @add_col(3, key_idea)
+#         new_dom_element
+#             parentNode : col2
+#             nodeName   : "div" 
+#             txt        : 'COLLABORATE'  
+#             className  : "presentationBigTitleCol"
+#         new_dom_element
+#             parentNode : col2
+#             nodeName   : "div" 
+#             txt        : 'Share and modify all your data (text, project, 3D...) in real time !'  
+#             className  : "presentationIndiTextCol"   
+#             
+#         col3 = @add_col(3, key_idea)
+#         new_dom_element
+#             parentNode : col3
+#             nodeName   : "div" 
+#             txt        : 'COMPUTE'  
+#             className  : "presentationBigTitleCol"
+#         new_dom_element
+#             parentNode : col3
+#             nodeName   : "div" 
+#             txt        : 'Use remote powerful resources ond demand. Fit them to your needs !'  
+#             className  : "presentationIndiTextCol"
+#         
+#         biglogo = @add_col(1, key_idea)
+#         new_dom_element
+#             parentNode : biglogo
+#             nodeName  : "img"
+#             src       : "img/biglogo.png"
+#             alt       : "logo"
+#             title     : "logo"
+#             style      :
+#                 margin: "0 0 20px 0"    
             
     #company -----------------------------------------------------------------------------        
     create_team: ->
-        team = @add_part "team", @backgroundColor.second, @textColor.second 
+        team = @add_part "team", "#f6f6f6" ,  "#262626"  
         team_title =  new_dom_element
             parentNode : team
             nodeName   : "div" 
@@ -383,7 +372,7 @@ class IndexView extends View
                 width      : "100%"
         
         #goal----------------------------------------------------------------------
-        goal = @add_part "objectif", @backgroundColor.second, @textColor.second 
+        goal = @add_part "objectif", "#f6f6f6" ,  "#262626"  
         goal_title =  new_dom_element
             parentNode : goal
             nodeName   : "div" 
@@ -411,7 +400,7 @@ class IndexView extends View
         
 
         #awards ---------------------------------------------------------
-        awards = @add_part "awards", @backgroundColor.second, @textColor.second   
+        awards = @add_part "awards","#f6f6f6" ,"#262626"   
         awards_title =  new_dom_element
             parentNode : awards
             nodeName   : "div" 
@@ -442,7 +431,7 @@ class IndexView extends View
             width     : "250"
         
         #partners ---------------------------------------------------------
-        partners = @add_part "partners", @backgroundColor.second, @textColor.second   
+        partners = @add_part "partners","#f6f6f6" ,"#262626"   
         partners_title =  new_dom_element
             parentNode : partners
             nodeName   : "div" 
@@ -487,42 +476,27 @@ class IndexView extends View
             width     : "200"    
         
     
-    #contact--------------------------------------------
-    create_contact: ->
-        contact = @add_part "contact", @backgroundColor.second, @textColor.second  
-        contact.style.textAlign = "center"
-        contact_title =  new_dom_element
-            parentNode : contact
+    #demo--------------------------------------------
+    create_demo: ->
+        demo = @add_part "demo", "#f6f6f6", "#262626"  
+        demo.style.textAlign = "center"
+        demo_title =  new_dom_element
+            parentNode : demo
             nodeName   : "div" 
-            txt        : 'Contact' 
+            txt        : 'Demo' 
             className  : "indexcenterpartTitle"
+        
         new_dom_element
-            parentNode : contact
+            parentNode : demo
             nodeName   : "div"
-            txt        : "86 rue de Paris, 91400 Orsay, FRANCE"
-            style      :
-                width      : "100%"
-                textAlign : "center"
-                margin : "20px 0 5px 0"
-        new_dom_element
-            parentNode : contact
-            nodeName   : "a"
-            href       : "mailto:contact@structure-computation.com"
-            txt        : "send a mail"
-            style      :
-                width     : "100%"
-                textAlign : "center"
-        new_dom_element
-            parentNode : contact
-            nodeName   : "div"
-            txt        : '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.484965886882!2d2.1946309000000097!3d48.696210899999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5d61facc30587%3A0xccaaa136fb1452e7!2s86+Rue+de+Paris!5e0!3m2!1sfr!2sfr!4v1404916614372" width="900" height="450" frameborder="0" style="border:0"></iframe>'
+            txt        : '<iframe src="http://localhost:8888/journal_demo_theme.html" width="1100" height="600" frameborder="0" style="border:0"></iframe>'
             style      :
                 width      : "100%"
                 margin     : "20px 0 0 0"
 
     #Solution--------------------------------------------
     create_solution: ->
-        presentation = @add_part "solution", @backgroundColor.second, @textColor.second   
+        presentation = @add_part "solution", "#f6f6f6", "#262626"  
         solution.style.textAlign = "center"
         contact_title =  new_dom_element
             parentNode : solution
@@ -605,7 +579,7 @@ class IndexView extends View
         
         
         #description ---------------------------------------   
-        description = @add_part "description", @backgroundColor.first, @textColor.first   
+        description = @add_part "description", "#262626", "#f6f6f6"  
         description.style.textAlign = "center"
         new_dom_element
             parentNode : description
@@ -658,7 +632,7 @@ class IndexView extends View
     
     #Products--------------------------------------------
     create_products: ->
-        products = @add_part "products", @backgroundColor.second, @textColor.second 
+        products = @add_part "products", "#f6f6f6", "#262626"  
         products.style.textAlign = "center"
         contact_title =  new_dom_element
             parentNode : products
@@ -672,6 +646,7 @@ class IndexView extends View
             parentNode : parent
             nodeName   : "div" 
             style      :
+#                 border     : "1px solid #4dbce9"
                 cssFloat   : "left" 
                 margin     : "10px 0px 10px 0"
         short = new_dom_element
@@ -683,9 +658,9 @@ class IndexView extends View
                 textAlign  : "center"
                 fontWeight : "bold"
                 fontSize   : "25px"
-                color      : @textColor.first
+                color      : "#f6f6f6"
                 margin     : "0px 30px 0px 0"
-                background : @backgroundColor.highlight
+                background : "#4dbce9"
                 cssFloat   : "left"
                 
         new_dom_element
@@ -721,7 +696,7 @@ class IndexView extends View
                 cssFloat   : "left"
     
     create_services: ->
-        services = @add_part "services", @backgroundColor.second, @textColor.second 
+        services = @add_part "services", "#f6f6f6", "#262626"  
         services.style.textAlign = "center"
         contact_title =  new_dom_element
             parentNode : services
@@ -779,7 +754,7 @@ class IndexView extends View
     
     #bottom of the page--------------------------------------------
     create_bottom: ->
-        bottom = @add_part "bottom", @backgroundColor.first, @textColor.first
+        bottom = @add_part "bottom","#262626" ,"#f6f6f6"  
         bottom_part =  new_dom_element
             parentNode : bottom
             nodeName   : "div" 
@@ -796,7 +771,7 @@ class IndexView extends View
                 cssFloat   : "left"
                 textAlign  : "left"
                 padding : "0 10px 0 0"
-                borderRight : @lineColor.first
+                borderRight : "1px solid #f6f6f6 "
                 
         new_dom_element
             parentNode : bottom_part
@@ -805,7 +780,7 @@ class IndexView extends View
             style      :
                 cssFloat   : "left"
                 textAlign  : "left"
-                borderRight : @lineColor.first
+                borderRight : "1px solid #f6f6f6 "
                 padding : "0 10px 0 10px"
                 
         new_dom_element
@@ -825,36 +800,37 @@ class IndexView extends View
                 cssFloat   : "right"
                 textAlign  : "left"
     
-    # index  ---------------------------------------------------------------------------------------------   
-    create_index: ->
+    # view  ---------------------------------------------------------------------------------------------   
+    create_view: ->
         @clear_page()
         
         #menu----------------------------------------------------------
         @create_menu()
         
         #presentation----------------------------------------------------------   
-        @create_presentation()
+        @create_article()
         
-        #team----------------------------------------------------------
+        #Demo----------------------------------------------------------
         @add_part_separator()
-        @create_team()
-        
-        #Solution----------------------------------------------------------
-        @add_part_separator()
-        @create_solution()
-        
-#         #Products----------------------------------------------------------
+        @create_demo()
+#         
+#         #Solution----------------------------------------------------------
 #         @add_part_separator()
-#         @create_products()
-       
-        #Services----------------------------------------------------------
-        @add_part_separator()
-        @create_services()
+#         @create_solution()
+#         
+# #         #Products----------------------------------------------------------
+# #         @add_part_separator()
+# #         @create_products()
+# #         
+#         #Services----------------------------------------------------------
+#         @add_part_separator()
+#         @create_services()
+#         
+#         #contact----------------------------------------------------------
+#         @add_part_separator()
+#         @create_contact()
         
-        #contact----------------------------------------------------------
-        @add_part_separator()
-        @create_contact()
-
+        
         #page bottom----------------------------------------------------------
         @create_bottom()
         
