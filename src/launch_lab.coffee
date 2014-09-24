@@ -204,6 +204,7 @@ launch_lab = ( userid, home_dir, main = document.body ) ->
     APPS.push new TreeAppApplication_Acquisition
     APPS.push new TreeAppApplication_Grid
     APPS.push new TreeAppApplication_Test
+    APPS.push new TreeAppApplication_TestA
         
     
     #lab

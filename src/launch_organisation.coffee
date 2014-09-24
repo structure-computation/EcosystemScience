@@ -72,6 +72,7 @@ create_organisation_view = ( config, main = document.body ) ->
     APPS.push new TreeAppApplication_Acquisition
     APPS.push new TreeAppApplication_Grid
     APPS.push new TreeAppApplication_Test
+    APPS.push new TreeAppApplication_TestA
     
     APPS.push new TreeAppApplication_IpolACE
     APPS.push new TreeAppApplication_IpolLSD
