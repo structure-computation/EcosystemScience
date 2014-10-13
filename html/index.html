@@ -1,8 +1,9 @@
 <html>
   <head> 
     
-    <title>is'sim</title> 
-    <meta name="is'sim" content="Collaborative design environment">
+    <title>is-sim</title> 
+    <meta name="is-sim" content="is-sim web site">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 
     <link rel="icon" type="image/png" href="favicone.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>   
@@ -16,16 +17,20 @@
     <link type="text/css" href="Soja/CodeEditor.css" rel="stylesheet"/>
     <link type="text/css" href="Soja/Application.css" rel="stylesheet"/>
     <link type="text/css" href="Soja/User.css" rel="stylesheet"/>
+    <link type="text/css" href="Soja/FileSystem.css" rel="stylesheet"/>
+    <link type="text/css" href="Soja/SiteApp.css" rel="stylesheet"/>
+
+
     <link type="text/css" href="gen/EcosystemScience.css" rel="stylesheet"/>
     <!--<link type="text/css" href="gen/Browse_Folder.css" rel="stylesheet"/>-->
-    <link type="text/css" href="Soja/FileSystem.css" rel="stylesheet"/>
+    
 
 
     <!-- CodeEditor in use is CodeMirror -->
     <link rel="stylesheet" href="CodeMirror-2.22/lib/codemirror.css">
     <link rel="stylesheet" href="CodeMirror-2.22/lib/util/dialog.css">    
 
-
+   
     <script type="text/javascript" src="Soja/Soja.js"></script>
     <script type="text/javascript" src="Soja/DomHelper.js"></script>
     <script type="text/javascript" src="Soja/TreeView.js"></script>
@@ -37,9 +42,11 @@
     <script type="text/javascript" src="Soja/User.js"></script>
 
 
-<!--     <script type="text/javascript" src="Soja/Animation.js"></script>  -->
+<!--     <script type="text/javascript" src="Soja/Animation.js"></script>  -->  
     <script type="text/javascript" src="Soja/TreeApp.js"></script>
+    <script type="text/javascript" src="Soja/SiteApp.js"></script>
     <script type="text/javascript" src="gen/Browse.js"></script>
+   
 
     <script src="CodeMirror-2.22/lib/codemirror.js"></script>
     <script src="CodeMirror-2.22/mode/xml/xml.js"></script>
@@ -51,7 +58,25 @@
     <script src="CodeMirror-2.22/lib/util/match-highlighter.js"></script>
     <script src="jQuery/jQuery.js"></script>
     <script src="jQuery/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+
+    <!-- base current theme -->
     <script type="text/javascript" src="gen/EcosystemScience.js"></script>
+
+    <!-- plugins, Application current theme -->
+    <script type="text/javascript" src="gen/Site.js"></script>
+    <script type="text/javascript" src="gen/Gmsh.js"></script>
+    <script type="text/javascript" src="gen/Correli.js"></script>
+    <script type="text/javascript" src="gen/Scult2D.js"></script>
+    <script type="text/javascript" src="gen/Scult3D.js"></script>
+    <script type="text/javascript" src="gen/Scills3D.js"></script>
+    <script type="text/javascript" src="gen/StepReader.js"></script>
+    <script type="text/javascript" src="gen/Function.js"></script>
+
+    <!--IPOL-->
+    <script type="text/javascript" src="gen/IpolACE.js"></script>
+    <script type="text/javascript" src="gen/IpolLSD.js"></script>
+    <script type="text/javascript" src="gen/IpolSCA.js"></script>
+    <script type="text/javascript" src="gen/IpolTVD.js"></script>
     
     <!--  font google  -->
     <script type="text/javascript">
@@ -81,9 +106,8 @@
       
     </script>
 
-  <body onload=" launch_index();">
+  <body onload=" launch_softhub();">
   
   
   </body> 
 </html>
-

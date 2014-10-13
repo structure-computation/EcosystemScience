@@ -65,10 +65,11 @@ class IssimSoftHubData extends TreeItem
         bm4 = new MenuButtonItem "Company", '#company' 
         bm5 = new MenuButtonItem "Contact", "#contact"
         
-        link = new MenuLinkItem 
-            name: "is-sim beta ->" 
-            balise: 'login.html'
-            color: @textColor.highlight
+        link = new MenuButtonItem "Try is-sim ->" , '#softhub'
+        link.cssFloat = "right"
+        link.color = @textColor.highlight
+        link.fontFamily = "'Indie Flower', sans-serif"
+        link.fontSize = "23px"
         
         menu.add_child logo
         menu.add_child bm0
@@ -84,9 +85,9 @@ class IssimSoftHubData extends TreeItem
         presentation = new SitePartItem 
                 name : 'is-sim'
                 balise : 'presentation'
-                title : true
+                title : false
                 separator  : false
-                background : @backgroundColor.second
+                background : @backgroundColor.first
         @add_child presentation
 
         presentation_video = new SiteTextItem
@@ -94,14 +95,17 @@ class IssimSoftHubData extends TreeItem
             txt: '<iframe width="853" height="480" src="//www.youtube.com/embed/K1MVV_nG8BI?rel=0" frameborder="0" allowfullscreen></iframe>'
         presentation.add_child presentation_video
         
-        presentation_text = new SiteTextItem
-            name: 'video is-sim'
-            txt: 'Try is-sim beta now ->'
-            fontSize : "35px"
-            fontFamily : "'Indie Flower', sans-serif"
-            fontWeight : "bold"
-            color : @textColor.highlight
-        presentation.add_child presentation_text
+#         presentation_text = new SiteTextItem
+#             name: 'video is-sim'
+#             txt: 'Try is-sim beta now ->'
+#             fontSize : "35px"
+#             fontFamily : "'Indie Flower', sans-serif"
+#             fontWeight : "bold"
+#             color : @textColor.highlight
+#             balise : '#softhub'
+#             cursor: "pointer"
+#             
+#         presentation.add_child presentation_text
         
         #ajout des key_idea---------------
         key_idea = new SitePartItem 
@@ -312,6 +316,8 @@ class IssimSoftHubData extends TreeItem
                 name : 'Solution'
                 type : 'column'
                 balise : 'solution'
+                background : @backgroundColor.first
+                color : @textColor.first
                 separator  : false
         @add_child solution
         

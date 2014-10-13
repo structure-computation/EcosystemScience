@@ -62,12 +62,13 @@ class IssimSoftPageData extends TreeItem
         @add_child menu
         
         #ajout de bouton au menu------------------------------------------------------------------------------------
-        logo = new MenuLogoItem "img/logo_issim_test.png", 'softhub.html'
+        logo = new MenuLogoItem "img/logo_issim_test.png", 'index.html'
         
         bm0 = new MenuButtonItem "Demo", '#demo'
         bm1 = new MenuButtonItem "Video", '#video'
         bm2 = new MenuButtonItem "Publications", '#publication'
-        bm3 = new MenuButtonItem "Editor", '#editor'
+        bm3 = new MenuButtonItem "Tutorial", '#tutorial'
+        bm4 = new MenuButtonItem "Editor", '#editor'
         
         link = new MenuLinkItem 
             name: "is-sim beta ->" 
@@ -76,10 +77,11 @@ class IssimSoftPageData extends TreeItem
         
         menu.add_child logo
         menu.add_child bm0
-        menu.add_child bm1
-        menu.add_child bm2
-        menu.add_child bm3
-        menu.add_child link
+        if @demo_app.video_link? then menu.add_child bm1
+        if @demo_app.publication_link? then menu.add_child bm2
+        if @demo_app.tutorial_link? then menu.add_child bm3
+        if @demo_app.editor_info? then menu.add_child bm4
+#         menu.add_child link
         
     
     
@@ -100,12 +102,21 @@ class IssimSoftPageData extends TreeItem
             textAlign: "center"
         demo.add_child demo_window 
         
-        demo_window = new SiteTextItem
-            txt: 'This online demo is provided by ' + @demo_app.edited_by.get()+ ' in collaboration with is-sim. All the data used and loaded 
+        demo_window_text = new SiteTextItem
+            txt: 'This online demo is provided by is-sim. All the data used and loaded 
                 in this demo are public and will be saved in the archive. '
             fontSize: "13px"
             textAlign: "center"
-        demo.add_child demo_window 
+        demo.add_child demo_window_text 
+        
+        demo_window_link = new SiteTextItem
+            txt: 'full screen demo ->'
+            fontSize: "17px"
+            textAlign: "center"
+            balise: "softdemo.html#" + @demo_application 
+            fontFamily: "'Indie Flower', sans-serif"
+            cursor: "pointer"
+        demo.add_child demo_window_link 
         
         
     add_video_item: () ->
