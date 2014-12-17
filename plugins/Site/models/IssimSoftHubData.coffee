@@ -497,7 +497,7 @@ class IssimSoftHubData extends TreeItem
     add_softlist_item: () ->
         #Applications de mecanique---------------
         softlist_mecanical = new SitePartItem
-                name : ''
+                name : 'softhub_mechanics'
                 balise : "softhub"
                 stamps_title: "<b> Mechanical software </b>"  
                 type : 'stamps'
@@ -518,7 +518,7 @@ class IssimSoftHubData extends TreeItem
         
         #Applications de traitement d'images---------------    
         softlist_image = new SitePartItem
-                name : ''
+                name : 'softhub_IPOL'
                 balise : "softhub_image"
                 stamps_title: "<b> Image processing software </b>"   
                 type : 'stamps'
